@@ -18,7 +18,7 @@ const Greeting = () => {
     } else {
         return (
             <div className="title_box">
-                <h1 className="title">Pan czy Pani?</h1>
+                <h1 className="title">Kto tam??</h1>
             </div>
         );
     }
