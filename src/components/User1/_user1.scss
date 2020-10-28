@@ -1,0 +1,54 @@
+@import "src/styles/colors";
+@import "src/styles/fonts";
+@import "src/layouts/HomePage/homepage";
+
+.user1_box {
+  height: 570px;
+  width: 400px;
+  background-color: $userBoxBgColor;
+  border: 10px solid black;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user_photo {
+  background-image: url("../../images/user1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 240px;
+  width: 340px;
+  border-radius: 2rem;
+  margin-top: 1.5rem;
+}
+
+.user_info {
+  background-color: $userBoxInfoBgColor;
+  height: 240px;
+  width: 340px;
+  border-radius: 2rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.user_title {
+  font-size: 2rem;
+  font-family: $headerFont;
+  margin-top: 0.8rem;
+}
+.user_level {
+  font-size: 1.2rem;
+  font-family: $headerFont;
+  margin-top: 0.8rem;
+}
+.user_speciality {
+  font-size: 1rem;
+  font-family: $headerFont;
+  color: white;
+  margin-top: 0.8rem;
+}
+.user_points {
+  font-size: 2.8rem;
+  font-family: $headerFont;
+  margin-top: 3rem;
+}
