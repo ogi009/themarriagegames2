@@ -1,0 +1,21 @@
+@import "src/styles/fonts";
+@import "src/styles/colors";
+
+
+.title_box {
+  background-color: black;
+  border: 2px dotted $headerFontColor;
+  height: 10rem;
+  border-radius: 10px;
+  align-self: center;
+  margin: -460px;
+  z-index: 2;
+}
+.title{
+  font-family: $headerFont;
+  color: $headerFontColor;
+  font-size: 100px;
+}
+.d_none {
+  display: none;
+}

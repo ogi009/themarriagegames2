@@ -11,9 +11,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: rotate(-10deg);
+}
+.user1_box:hover {
+  transform: scale(1.2);
 }
 
-.user_photo {
+.user_photo1 {
   background-image: url("../../images/user1.jpg");
   background-size: cover;
   background-position: center;
