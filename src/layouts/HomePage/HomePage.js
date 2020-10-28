@@ -7,8 +7,10 @@ const HomePage = () => {
     return (
         <div className="main_container">
             <Header/>
+            <div className="user_container">
+                    <User1/>
+            </div>
 
-                <User1/>
 
 
         </div>
