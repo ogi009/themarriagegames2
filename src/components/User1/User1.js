@@ -3,12 +3,15 @@ import "./_user1.scss"
 import Buttons from "../Buttons/Buttons";
 
 const User1 = () => {
-    const [click, setClick] = useState(false);
-
+    const [show, setShow] = useState(false);
+    console.log(show);
     const handleClick = () => {
-        setClick(true);
+        setShow(true)
     }
-    if (click === false) {
+    const handleClick2 = () => {
+        setShow(false);
+    }
+    if (show === false) {
         return (
             <div className="user1_box" onClick={handleClick}>
                 <div className="user_photo1"></div>
@@ -22,8 +25,8 @@ const User1 = () => {
         );
     } else {
         return (
-            <div className="user1_box-2" onClick={handleClick}>
-                <div>
+            <div className="user1_box-2">
+                <div className="user_details">
                     <div className="user_photo1-2"></div>
                     <div className="user_info-2">
                         <h2 className="user_title-2">Kuba</h2>
@@ -32,9 +35,10 @@ const User1 = () => {
                         <h1 className="user_points-2">23</h1>
                     </div>
                 </div>
-                    <div>
+                    <div className="pages_container">
                         <Buttons/>
                     </div>
+                <button onClick={handleClick2} style={{background:"none", border:"none",outline:"none", height: "2rem", marginRight:"0.5rem"}}>X</button>
                 </div>
 
         );

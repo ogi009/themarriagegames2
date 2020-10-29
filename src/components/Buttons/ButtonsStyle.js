@@ -2,7 +2,9 @@ const buttonsStyle = {
     width: "5rem",
     height: "2.5rem",
     backgroundColor: "orange",
-    margin: "1rem"
+    margin: "0.5rem",
 }
+
+
 
 export default buttonsStyle;
