@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import User1 from "../../components/User1/User1";
 import User2 from "../../components/user2/User2";
 import Greeting from "../../components/greeting/Greeting";
+import Frame from "../../components/Frame/Frame";
 
 const HomePage = () => {
     return (
@@ -11,6 +12,7 @@ const HomePage = () => {
             <Header/>
             <div className="user_container">
                     <User1/>
+                    <Frame/>
                     <Greeting/>
                     <User2/>
             </div>
