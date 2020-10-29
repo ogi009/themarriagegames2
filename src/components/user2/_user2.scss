@@ -3,19 +3,20 @@
 @import "src/layouts/HomePage/homepage";
 
 .user2_box {
-  height: 570px;
-  width: 400px;
+  height: 35.5rem;
+  width: 25rem;
   background-color: $userBoxBgColor;
-  border: 10px solid black;
-  border-radius: 32px;
+  border: 0.625rem solid black;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: scale(0.5) skew(-35deg) rotateX(60deg);
+  transform: scale(0.4) skew(-45deg) rotateX(60deg);
   position: absolute;
-  bottom: -150px;
-  left: 500px;
-  box-shadow: 9px 10px 5px 0 rgba(0,0,0,.75);
+  bottom: -10.375rem;
+  left: 10rem;
+  box-shadow: 0.56rem 0.625rem 0.31rem 0 rgba(0,0,0,.75);
+
   //height: 570px;
   //width: 400px;
   //background-color: $userBoxBgColor;
@@ -45,7 +46,7 @@
 .user2_box:hover {
   transform: scale(1.2);
   position: absolute;
-  top: 250px;
+  bottom: 5.6rem;
   z-index: 1;
 }
 
@@ -53,16 +54,16 @@
   background-image: url("../../images/user2.jpg");
   background-size: cover;
   background-position: center;
-  height: 240px;
-  width: 340px;
+  height: 15rem;
+  width: 21.25rem;
   border-radius: 2rem;
   margin-top: 1.5rem;
 }
 
 .user_info {
   background-color: $userBoxInfoBgColor;
-  height: 240px;
-  width: 340px;
+  height: 15rem;
+  width: 21.25rem;
   border-radius: 2rem;
   margin-top: 1.5rem;
   text-align: center;

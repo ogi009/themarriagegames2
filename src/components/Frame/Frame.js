@@ -16,6 +16,8 @@ const Frame = () => {
          border: "10px solid black",
          boxShadow: "9px 10px 5px 0 rgba(0,0,0,.75)",
          position: "absolute",
+         right:"-2rem",
+         top: "5rem",
          transform: moveFrame,
      }
      const handleClick = () =>{
@@ -38,9 +40,9 @@ const Frame = () => {
      }
     return (
         <div onClick={handleClick} onMouseEnter={handleMouse} className="frame_container" style={frameStyle}>
-            <div className="string">
-                <div className="nail"></div>
-            </div>
+            {/*<div className="string">*/}
+            {/*    <div className="nail"></div>*/}
+            {/*</div>*/}
         </div>
     );
 };

@@ -4,17 +4,17 @@
 
 .title_box {
   background-color: black;
-  border: 2px dotted $headerFontColor;
-  height: 10rem;
-  border-radius: 10px;
+  border: 0.125rem dotted $headerFontColor;
+  height: 0.625rem;
+  border-radius: 0.625rem;
   align-self: center;
-  margin: -460px;
+  margin: -28.75rem;
   z-index: 2;
 }
 .title{
   font-family: $headerFont;
   color: $headerFontColor;
-  font-size: 100px;
+  font-size: 6.25rem;
 }
 .d_none {
   display: none;

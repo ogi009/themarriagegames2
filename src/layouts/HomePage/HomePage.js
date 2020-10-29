@@ -3,7 +3,7 @@ import './_homepage.scss';
 import Header from "../../components/Header/Header";
 import User1 from "../../components/User1/User1";
 import User2 from "../../components/user2/User2";
-import Greeting from "../../components/greeting/Greeting";
+
 import Frame from "../../components/Frame/Frame";
 
 const HomePage = () => {
@@ -11,9 +11,8 @@ const HomePage = () => {
         <div className="main_container">
             <Header/>
             <div className="user_container">
+                <Frame/>
                     <User1/>
-                    <Frame/>
-                    <Greeting/>
                     <User2/>
             </div>
 

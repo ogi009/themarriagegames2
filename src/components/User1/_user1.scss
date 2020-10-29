@@ -3,69 +3,42 @@
 @import "src/layouts/HomePage/homepage";
 
 .user1_box {
-  height: 570px;
-  width: 400px;
+  height: 35.5rem;
+  width: 25rem;
   background-color: $userBoxBgColor;
-  border: 10px solid black;
-  border-radius: 32px;
+  border: 0.625rem solid black;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: scale(0.5) skew(-35deg) rotateX(60deg);
+  transform: scale(0.4) skew(-45deg) rotateX(60deg);
   position: absolute;
-  bottom: -150px;
-  left: 400px;
-  box-shadow: 9px 10px 5px 0 rgba(0,0,0,.75);
-  //height: 570px;
-  //width: 400px;
-  //background-color: $userBoxBgColor;
-  //border: 10px solid black;
-  //border-radius: 32px;
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
-  //transform: rotate(-10deg);
-}
-
-//@keyframes cardOnTable {
-//  0% {
-//    height: 570px;
-//    width: 400px;
-//    background-color: $userBoxBgColor;
-//    border: 10px solid black;
-//    border-radius: 32px;
-//    display: flex;
-//    flex-direction: column;
-//    align-items: center;
-//    transform: scale(0.5) skew(-35deg) rotateX(60deg);
-//    position: absolute;
-//    bottom: -150px;
-//    left: 400px;
-//  }
-//}
+  bottom: -10.375rem;
+  left: 5rem;
+  box-shadow: 0.56rem 0.625rem 0.31rem 0 rgba(0,0,0,.75);
+  }
 
 .user1_box:hover {
-  transform: scale(1.2);
+  transform: scale(1);
   position: absolute;
-  top: 250px;
+  bottom: 5.6rem;
   z-index: 1;
-
 }
 
 .user_photo1 {
   background-image: url("../../images/user1.jpg");
   background-size: cover;
   background-position: center;
-  height: 240px;
-  width: 340px;
+  height: 15rem;
+  width: 21.25rem;
   border-radius: 2rem;
   margin-top: 1.5rem;
 }
 
 .user_info {
   background-color: $userBoxInfoBgColor;
-  height: 240px;
-  width: 340px;
+  height: 15rem;
+  width: 21.25rem;
   border-radius: 2rem;
   margin-top: 1.5rem;
   text-align: center;
@@ -87,6 +60,59 @@
   margin-top: 0.8rem;
 }
 .user_points {
+  font-size: 2.8rem;
+  font-family: $headerFont;
+  margin-top: 3rem;
+}
+
+.user1_box-2 {
+  height: 35.5rem;
+  width: 55rem;
+  background-color: $userBoxBgColor;
+  border: 0.625rem solid black;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  padding-left: 1rem;
+  box-shadow: 0.56rem 0.625rem 0.31rem 0 rgba(0,0,0,.75);
+}
+
+.user_photo1-2 {
+  background-image: url("../../images/user1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 15rem;
+  width: 21.25rem;
+  border-radius: 2rem;
+  margin-top: 1.5rem;
+}
+
+.user_info-2 {
+  background-color: $userBoxInfoBgColor;
+  height: 15rem;
+  width: 21.25rem;
+  border-radius: 2rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.user_title-2 {
+  font-size: 2rem;
+  font-family: $headerFont;
+  margin-top: 0.8rem;
+}
+.user_level-2 {
+  font-size: 1.2rem;
+  font-family: $headerFont;
+  margin-top: 0.8rem;
+}
+.user_speciality-2 {
+  font-size: 1rem;
+  font-family: $headerFont;
+  color: white;
+  margin-top: 0.8rem;
+}
+.user_points-2 {
   font-size: 2.8rem;
   font-family: $headerFont;
   margin-top: 3rem;
