@@ -1,81 +1,78 @@
 @import "src/styles/colors";
 @import "src/styles/fonts";
-@import "src/layouts/HomePage/homepage";
+
 
 .user1_box {
-  height: 35.5rem;
-  width: 25rem;
+  height: 10rem;
+  width: 7rem;
   background-color: $orangeBGCardColor;
-  border: 0.625rem solid $whiteCardColor;
-  border-radius: 2rem;
+  border: 0.225rem solid $whiteCardColor;
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: scale(0.4) skew(-25deg) rotateX(60deg);
-  position: absolute;
-  top: 14rem;
-  left: 35rem;
+  transform:  skew(-25deg) rotateX(50deg);
   box-shadow: 0.56rem 0.625rem 0.31rem 0 rgba(0,0,0,.75);
-  }
-
-.user1_box:hover {
-  transform: scale(1);
   position: absolute;
-  bottom: 7.5rem;
+  top: 6rem;
+  right:6rem ;
+  }
+.user1_box:hover {
+  transform: scale(3);
+  position: absolute;
+  top: 9rem;
   z-index: 1;
 }
-
 .user_photo1 {
   background-image: url("../../images/user1.jpg");
   background-size: cover;
   background-position: center;
-  height: 15rem;
-  width: 21.25rem;
-  border-radius: 2rem;
-  margin-top: 1.5rem;
+  height: 4rem;
+  width:6rem;
+  border-radius: 0.5rem;
+  margin-top: 0.3rem;
 }
 
 .user1_info {
   background-color: $violetBgCardColor;
-  height: 15rem;
-  width: 21.25rem;
-  border-radius: 2rem;
-  margin-top: 1.5rem;
+  height: 4.7rem;
+  width: 6rem;
+  border-radius: 0.5rem;
+  margin-top: 0.3rem;
   text-align: center;
 }
 .user1_title {
-  font-size: 2rem;
-  font-family: $mainFont2;
-  margin-top: 0.8rem;
-}
-.user1_level {
-  font-size: 1.2rem;
-  font-family: $mainFont2;
-  margin-top: 0.8rem;
-}
-.user1_speciality {
   font-size: 1rem;
   font-family: $mainFont2;
+  margin-top: 0.2rem;
   color: white;
-  margin-top: 0.8rem;
+}
+.user1_level {
+  font-size: 0.6rem;
+  font-family: $mainFont2;
+
+}
+.user1_speciality {
+  font-size: 0.3rem;
+  font-family: $mainFont2;
+  color: white;
 }
 .user1_points {
-  font-size: 2.8rem;
+  font-size: 1rem;
   font-family: $mainFont2;
-  margin-top: 3rem;
 }
 
 .user1_box-2 {
   height: 35.5rem;
   width: 55rem;
-  background-color: $whiteCardColor;
-  border: 0.625rem solid black;
+  background-color: $orangeBGCardColor;
+  border: 0.625rem solid $whiteCardColor;
   border-radius: 2rem;
   display: flex;
   justify-content: space-between;
-  z-index: 2;
   padding-left: 1rem;
   box-shadow: 0.56rem 0.625rem 0.31rem 0 rgba(0,0,0,.75);
+  z-index: 3;
 }
 
 .user_photo1-2 {
@@ -89,7 +86,7 @@
 }
 
 .user_info-2 {
-  background-color: $userBoxInfoBgColor;
+  background-color: $violetBgCardColor;
   height: 15rem;
   width: 21.25rem;
   border-radius: 2rem;
@@ -100,6 +97,7 @@
   font-size: 2rem;
   font-family: $headerFont;
   margin-top: 0.8rem;
+  color: white;
 }
 .user_level-2 {
   font-size: 1.2rem;
@@ -118,9 +116,22 @@
   margin-top: 3rem;
 }
 .pages_container {
-  width: 100%;
+  width: 90%;
   height: 92%;
-  margin: 1.5rem 0 1.5rem 1.5rem;
-  background-color: white;
+  margin-top: 1.4rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  background-color: $clockColor;
   border-radius: 2rem;
+}
+.pages_container-close_button {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: none;
+  color: white;
+  position: absolute;
+  right:- 24rem;
+  border: none;
+  font-weight: bold;
 }

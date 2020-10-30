@@ -4,16 +4,15 @@ import Buttons from "../Buttons/Buttons";
 
 const User1 = () => {
     const [show, setShow] = useState(false);
-    console.log(show);
-    const handleClick = () => {
+    const handleUserClick = () => {
         setShow(true)
     }
-    const handleClick2 = () => {
-        setShow(false);
+    const handleUserClick2 = () => {
+        setShow(false)
     }
     if (show === false) {
         return (
-            <div className="user1_box" onClick={handleClick}>
+            <div onClick={handleUserClick} className="user1_box">
                 <div className="user_photo1"></div>
                 <div className="user1_info">
                     <h2 className="user1_title">Kuba</h2>
@@ -22,6 +21,7 @@ const User1 = () => {
                     <h1 className="user1_points">23 ptk.</h1>
                 </div>
             </div>
+
         );
     } else {
         return (
@@ -35,14 +35,14 @@ const User1 = () => {
                         <h1 className="user_points-2">23</h1>
                     </div>
                 </div>
-                    <div className="pages_container">
-                        <Buttons/>
-                    </div>
-                <button onClick={handleClick2} style={{background:"none", border:"none",outline:"none", height: "2rem", marginRight:"0.5rem"}}>X</button>
+                <div className="pages_container">
+                    <Buttons/>
                 </div>
-
-        );
+                <button onClick={handleUserClick2} className="pages_container-close_button">X</button>
+            </div>
+        )
     }
+
 
 };
 

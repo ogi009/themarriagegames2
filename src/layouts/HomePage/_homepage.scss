@@ -1,3 +1,5 @@
+@import "src/styles/mixins";
+
 .main_container {
   background-image: url("../../images/BGmain2.png");
   background-size: contain;
@@ -11,4 +13,9 @@
   margin: 0 auto;
   padding: 3.75rem;
   display: flex;
+}
+@include mobile {
+  body {
+    font-size: 6px;
+  }
 }

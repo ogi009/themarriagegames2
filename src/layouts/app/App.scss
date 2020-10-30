@@ -1,8 +1,26 @@
 @import "src/styles/fonts";
+@import "src/styles/mixins";
 
 
 .App-header {
   font-size: 100px;
   color: orange;
   font-family: $headerFont;
+}
+
+@include mobile {
+  html {
+    font-size: 6px;
+  }
+}
+
+@include tablet {
+  html {
+    font-size: 10px;
+  }
+}
+@include desktop {
+  html {
+    font-size: 12px;
+  }
 }

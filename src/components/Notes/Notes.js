@@ -6,8 +6,8 @@ import  BackgroundImage3 from "../../images/me3.jpg";
 
 
 const Notes = () => {
-    const [note1, setNote1] = useState("O autorze");
-    const [note2, setNote2] = useState("Co można");
+    const [note1, setNote1] = useState("O mnie");
+    const [note2, setNote2] = useState("Kontakt");
     const [note3, setNote3] = useState("O co chodzi");
     const [pic, setPic] = useState(BackgroundImage3);
 
@@ -32,27 +32,28 @@ const Notes = () => {
     const onMouseEnter = () =>{
             setNote1(<div><
                 div>Nazywam się Kuba. Jestem emerytowanym zawodnikiem Kitesurfingu, który zaczyna przygodę z Reactem;)</div>
-                    <div style={{color: "red", fontSize: "1.5rem"}}> Chesz Mnie zobaczyć KLINKIJ!</div>
+                    <div style={{color: "red", fontSize: "1.5rem", marginTop: "0.2rem", textAlign: "center"}}> Chcesz Mnie zobaczyć KLINKIJ!</div>
             </div>)
     }
     const onMouseLeave = () => {
-        setNote1("O autorze");
+        setNote1("O mnie");
     }
     const onMouseEnter2 = () =>{
             setNote2(<div style={{padding: "1rem"}}>
-                <p>Stronka jest interaktywna, w elementy możesz klikać lub przesuwać, szukać;)</p>
-                <p>Możesz też zobaczyć moją rywalizację z żoną o miano małżonka roku</p>
-                <p style={{color: "red", fontSize:" 1.5rem"}}>BAW SIĘ!</p>
+                <p style={{color: "red", fontSize:" 2rem",textAlign: "center", marginTop: "3rem"}}>Napisz do mnie!</p>
             </div>)
     }
     const onMouseLeave2 = () => {
-        setNote2("Co można");
+        setNote2("Kontakt");
     }
     const onMouseEnter3 = () =>{
-            setNote3("Stronka jest interaktywna, w elementy możesz klikać lub przesuwać, szukać;)")
+            setNote3(<div>
+                <p>Od wieki wieków toczy się spóro to kto? Kto więcej wychodzi z pesem, wynosi śmieci, itp.</p>
+                <p style={{color:"red", fontSize: "1.2rem", fontWeight: "bold"}}> Postanowiłem się tym zająć i oto rozwiązanie dla wszystkich słóconych par!!</p>
+            </div>)
     }
     const onMouseLeave3 = () => {
-        setNote3("Co można");
+        setNote3("O co chodzi");
     }
         return (
             <div className="note_container">
