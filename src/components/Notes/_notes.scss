@@ -1,0 +1,82 @@
+@import "src/styles/colors";
+@import "src/styles/fonts";
+
+.note_container {
+  position: relative;
+  width: 12rem;
+  height: 16rem;
+}
+.note1 {
+  height: 5rem;
+  width: 5rem;
+  background-color: white;
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  font-family: $mainFont2;
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+.note1:hover {
+  height: 15rem;
+  width: 15rem;
+  background-color: white;
+  position: absolute;
+  bottom: -10rem;
+  left: 1rem;
+  font-family: $mainFont2;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  z-index: 1;
+}
+
+.note2 {
+  height: 5rem;
+  width: 5rem;
+  background-color: $orangeBGCardColor;
+  position: absolute;
+  bottom: 5rem;
+  left: 5rem;
+  font-family: $mainFont2;
+  padding: 1rem;
+}
+.note2:hover {
+  height: 15rem;
+  width: 15rem;
+  background-color: $orangeBGCardColor;
+  position: absolute;
+  bottom: -6rem;
+  left: 2rem;
+  font-family: $mainFont2;
+  padding: 1rem;
+}
+
+.note3 {
+  height: 5rem;
+  width: 5rem;
+  background-color: $note1Color;
+  position: absolute;
+  bottom: 9rem;
+  left: 2rem;
+  font-family: $mainFont2;
+  padding: 1rem;
+}
+.note3:hover {
+  height: 15rem;
+  width: 15rem;
+  background-color: $orangeBGCardColor;
+  position: absolute;
+  bottom: -2rem;
+  left: 1rem;
+  font-family: $mainFont2;
+  padding: 1rem;
+
+}
+.my_photo {
+
+  height: 10rem;
+  width: 13rem;
+  background-image: url("../../images/me1.jpg");
+  background-size: cover;
+
+}

@@ -1,0 +1,10 @@
+@import "src/styles/colors";
+@import "src/styles/fonts";
+
+.clock_container {
+  width: 17rem;
+  height: 17rem;
+  background-color: white;
+  border-radius: 50%;
+  border: 2rem solid $clockColor;
+}

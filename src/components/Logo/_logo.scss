@@ -1,0 +1,45 @@
+@import "src/styles/colors";
+@import "src/styles/fonts";
+
+.logo_container {
+  width: 17rem;
+  height: 16rem;
+  background-color: $brightBackgroundColor3;
+  box-shadow: 9px 10px 5px 0 rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.logo_container2 {
+  width: 15rem;
+  height: 14rem;
+  background-color: $brightBackgroundColor2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo_frame {
+  background-color: $brightBackgroundColor;
+  width: 13rem;
+  height: 12rem;
+  padding: 2rem;
+}
+
+.logo_container-title {
+  color: black;
+  font-family: $mainFont2;
+  font-size: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.far {
+  color: red;
+  height: 2rem;
+  width: 2rem;
+}
+.the {
+  display: block;
+}

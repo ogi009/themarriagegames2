@@ -1,0 +1,23 @@
+@import "src/styles/colors";
+@import "src/styles/fonts";
+
+.calendar_container {
+  height: 13rem;
+  width: 20rem;
+  background-color: $bgCalendarColor;
+  border-top: 3rem solid $orangeForCalendarColor;
+  border-right: 1rem solid $orangeForCalendarColor;
+  border-bottom:1rem solid $orangeForCalendarColor;
+  border-left:1rem solid $orangeForCalendarColor;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: $mainFont2;
+  font-size: 1.5rem;
+}
+.calendar_date{
+  font-size: 3rem;
+  text-align: center;
+  color: $dateColor;
+}
