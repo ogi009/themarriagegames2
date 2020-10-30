@@ -5,52 +5,26 @@
 .user2_box {
   height: 35.5rem;
   width: 25rem;
-  background-color: $userBoxBgColor;
-  border: 0.625rem solid black;
+  background-color: $orangeBGCardColor;
+  border: 0.625rem solid $whiteCardColor;
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: scale(0.4) skew(-45deg) rotateX(60deg);
+  transform: scale(0.4) skew(-25deg) rotateX(60deg);
   position: absolute;
-  bottom: -10.375rem;
-  left: 10rem;
+  top: 14rem;
+  left: 40rem;
   box-shadow: 0.56rem 0.625rem 0.31rem 0 rgba(0,0,0,.75);
-
-  //height: 570px;
-  //width: 400px;
-  //background-color: $userBoxBgColor;
-  //border: 10px solid black;
-  //border-radius: 32px;
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
-  //transform: rotate(10deg);
 }
-//@keyframes cardOnTable {
-//  0% {
-//    height: 570px;
-//    width: 400px;
-//    background-color: $userBoxBgColor;
-//    border: 10px solid black;
-//    border-radius: 32px;
-//    display: flex;
-//    flex-direction: column;
-//    align-items: center;
-//    transform: scale(0.5) skew(-35deg) rotateX(60deg);
-//    position: absolute;
-//    bottom: -150px;
-//    left: 400px;
-//  }
-//}
 .user2_box:hover {
-  transform: scale(1.2);
+  transform: scale(1);
   position: absolute;
-  bottom: 5.6rem;
+  bottom: 7.5rem;
   z-index: 1;
 }
 
-.user_photo2 {
+.user2_photo2 {
   background-image: url("../../images/user2.jpg");
   background-size: cover;
   background-position: center;
@@ -60,32 +34,32 @@
   margin-top: 1.5rem;
 }
 
-.user_info {
-  background-color: $userBoxInfoBgColor;
+.user2_info {
+  background-color: $violetBgCardColor;
   height: 15rem;
   width: 21.25rem;
   border-radius: 2rem;
   margin-top: 1.5rem;
   text-align: center;
 }
-.user_title {
+.user2_title {
   font-size: 2rem;
-  font-family: $headerFont;
+  font-family: $mainFont2;
   margin-top: 0.8rem;
 }
-.user_level {
+.user2_level {
   font-size: 1.2rem;
-  font-family: $headerFont;
+  font-family: $mainFont2;
   margin-top: 0.8rem;
 }
-.user_speciality {
+.user2_speciality {
   font-size: 1rem;
-  font-family: $headerFont;
+  font-family: $mainFont2;
   color: white;
   margin-top: 0.8rem;
 }
-.user_points {
+.user2_points {
   font-size: 2.8rem;
-  font-family: $headerFont;
+  font-family: $mainFont2;
   margin-top: 3rem;
 }

@@ -5,16 +5,16 @@
 .user1_box {
   height: 35.5rem;
   width: 25rem;
-  background-color: $userBoxBgColor;
-  border: 0.625rem solid black;
+  background-color: $orangeBGCardColor;
+  border: 0.625rem solid $whiteCardColor;
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: scale(0.4) skew(-45deg) rotateX(60deg);
+  transform: scale(0.4) skew(-25deg) rotateX(60deg);
   position: absolute;
-  bottom: -10.375rem;
-  left: 5rem;
+  top: 14rem;
+  left: 35rem;
   box-shadow: 0.56rem 0.625rem 0.31rem 0 rgba(0,0,0,.75);
   }
 
@@ -35,40 +35,40 @@
   margin-top: 1.5rem;
 }
 
-.user_info {
-  background-color: $userBoxInfoBgColor;
+.user1_info {
+  background-color: $violetBgCardColor;
   height: 15rem;
   width: 21.25rem;
   border-radius: 2rem;
   margin-top: 1.5rem;
   text-align: center;
 }
-.user_title {
+.user1_title {
   font-size: 2rem;
-  font-family: $headerFont;
+  font-family: $mainFont2;
   margin-top: 0.8rem;
 }
-.user_level {
+.user1_level {
   font-size: 1.2rem;
-  font-family: $headerFont;
+  font-family: $mainFont2;
   margin-top: 0.8rem;
 }
-.user_speciality {
+.user1_speciality {
   font-size: 1rem;
-  font-family: $headerFont;
+  font-family: $mainFont2;
   color: white;
   margin-top: 0.8rem;
 }
-.user_points {
+.user1_points {
   font-size: 2.8rem;
-  font-family: $headerFont;
+  font-family: $mainFont2;
   margin-top: 3rem;
 }
 
 .user1_box-2 {
   height: 35.5rem;
   width: 55rem;
-  background-color: $userBoxBgColor;
+  background-color: $whiteCardColor;
   border: 0.625rem solid black;
   border-radius: 2rem;
   display: flex;

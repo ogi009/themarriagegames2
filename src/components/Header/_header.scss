@@ -1,21 +1,121 @@
 @import "src/styles/colors";
 @import "src/styles/fonts";
 
+.header_container {
+  margin: 0 auto;
+  width: 90vw;
+  height: 40vh;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
 
-.header_container{
-  width: 100%;
-  height: 10rem;
-  background-color: black;
-  box-shadow: 9px 10px 5px 0 rgba(0,0,0,0.75);
 }
 
-.header_container-title{
-  color: $headerFontColor;
-  font-family: $headerFont;
-  text-align: center;
-  font-size: 4rem;
+.header_frame_container {
+  width: 17rem;
+  height: 16rem;
+  background-color: $brightBackgroundColor3;
+  box-shadow: 9px 10px 5px 0 rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
+
+.frame_container2 {
+  width: 15rem;
+  height: 14rem;
+  background-color: $brightBackgroundColor2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame_frame {
+  background-color: $brightBackgroundColor;
+  width: 13rem;
+  height: 12rem;
+  padding: 2rem;
+}
+
+.frame_container-title {
+  color: black;
+  font-family: $mainFont2;
+  font-size: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.far {
+  color: red;
+}
+
 .the {
+  display: block;
+}
+.note_container {
+  position: relative;
+  width: 12rem;
+  height: 16rem;
+}
+.note1 {
+  height: 5rem;
+  width: 5rem;
+  background-color: white;
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  font-family: $mainFont2;
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+.note2 {
+  height: 5rem;
+  width: 5rem;
+  background-color: $orangeBGCardColor;
+  position: absolute;
+  bottom: 5rem;
+  left: 5rem;
+  font-family: $mainFont2;
+  padding: 1rem;
+}
+
+.note3 {
+  height: 5rem;
+  width: 5rem;
+  background-color: $note1Color;
+  position: absolute;
+  bottom: 9rem;
+  left: 2rem;
+  font-family: $mainFont2;
+  padding: 1rem;
+}
+.calendar_container {
+  height: 13rem;
+  width: 20rem;
+  background-color: $bgCalendarColor;
+  border-top: 3rem solid $orangeForCalendarColor;
+  border-right: 1rem solid $orangeForCalendarColor;
+  border-bottom:1rem solid $orangeForCalendarColor;
+  border-left:1rem solid $orangeForCalendarColor;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: $mainFont2;
+  font-size: 1.5rem;
+}
+.calendar_date{
   font-size: 3rem;
-  padding-top: 0.5rem;
+  text-align: center;
+  color: $dateColor;
+}
+.clock_container {
+  width: 17rem;
+  height: 17rem;
+  background-color: white;
+  border-radius: 50%;
+  border: 2rem solid $clockColor;
 }
