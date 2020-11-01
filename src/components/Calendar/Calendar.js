@@ -16,7 +16,7 @@ const Calendar = () => {
     return (
         <div className="calendar_container">
             <div style={{textAlign: "center"}}> { new Date().getDate()} {currentMotnh}</div>
-            <div style={{color: "red", fontSize: "2.5rem"}}> {currentDay}</div>
+            <div style={{color: "red"}}> {currentDay}</div>
 
         </div>
     );

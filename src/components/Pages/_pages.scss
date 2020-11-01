@@ -43,19 +43,47 @@
 }
 .statistic_bar {
   height: 2rem;
-  width: 60%;
-  background-color: green;
+  background-color: greenyellow;
 }
 .statistic_bar2 {
   height: 2rem;
-  width: 40%;
   background-color: red;
 }
 .small_user2 {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   background-image: url("../../images/user2.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 50%;
+}
+.statistic_container-text {
+  font-family: $mainFont2;
+  color: white;
+  font-size: 0.7rem;
+  text-align: center;
+}
+.statistic_container-dog:hover {
+  transform: scale(2);
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+  border: 0.5rem solid $orangeBGCardColor;
+}
+.statistic_container-bin:hover {
+  transform: scale(2);
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+  border: 0.5rem solid $orangeBGCardColor;
+}
+.statistic_container-broom:hover {
+  transform: scale(2);
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+  border: 0.5rem solid $orangeBGCardColor;
+}
+.statistic_container-sink:hover {
+  transform: scale(2);
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+  border: 0.5rem solid $orangeBGCardColor;
 }
