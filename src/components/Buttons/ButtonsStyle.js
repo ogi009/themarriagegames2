@@ -1,5 +1,4 @@
 
-
 const buttonsStyle = {
     width: "6rem",
     height: "3.5rem",

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./_user1.scss"
-import Buttons from "../Buttons/Buttons";
+import Pages from "../Pages/Pages";
 
 const User1 = () => {
     const [show, setShow] = useState(false);
@@ -32,11 +32,11 @@ const User1 = () => {
                         <h2 className="user_title-2">Kuba</h2>
                         <h3 className="user_level-2">Mąż IV poziomu</h3>
                         <p className="user_speciality-2"> Specjalność: “śmieci”</p>
-                        <h1 className="user_points-2">23</h1>
+                        <h1 className="user_points-2">23 ptk</h1>
                     </div>
                 </div>
                 <div className="pages_container">
-                    <Buttons/>
+                    <Pages/>
                 </div>
                 <button onClick={handleUserClick2} className="pages_container-close_button">X</button>
             </div>

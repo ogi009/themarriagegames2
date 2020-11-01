@@ -1,0 +1,18 @@
+@import "src/styles/colors";
+.add_container {
+  justify-content: space-around;
+  margin-top: 5rem;
+
+}
+.add_container_buttons {
+  border-radius: 50%;
+  outline: none;
+  background: none;
+  border: none;
+}
+.fas {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  font-size: 5rem;
+}
