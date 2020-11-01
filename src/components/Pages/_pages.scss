@@ -1,8 +1,13 @@
 @import "src/styles/colors";
-.add_container {
-  justify-content: space-around;
-  margin-top: 5rem;
+@import "src/styles/fonts";
 
+.add_container {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2rem;
+  height: 15rem;
+  width: 30rem;
+  padding-right: 2rem;
 }
 .add_container_buttons {
   border-radius: 50%;
@@ -15,4 +20,42 @@
   width: 3rem;
   border-radius: 50%;
   font-size: 5rem;
+  color: white;
+  margin: 2rem;
+}
+.fas:hover {
+  color: $orangeBGCardColor ;
+}
+.details_container{
+  max-height: 20rem;
+  margin: 3rem;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 1rem;
+  font-family: $headerFont;
+  color: white;
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+}
+.details_container-list {
+  list-style: none;
+  color: $orangeBGCardColor;
+}
+.statistic_bar {
+  height: 2rem;
+  width: 60%;
+  background-color: green;
+}
+.statistic_bar2 {
+  height: 2rem;
+  width: 40%;
+  background-color: red;
+}
+.small_user2 {
+  width: 5rem;
+  height: 5rem;
+  background-image: url("../../images/user2.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
 }
