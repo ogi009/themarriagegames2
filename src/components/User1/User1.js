@@ -4,7 +4,8 @@ import Pages from "../Pages/Pages";
 
 const User1 = () => {
     const [show, setShow] = useState(false);
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(JSON.parse(window.localStorage.getItem('points')));
+    window.localStorage.setItem('points', JSON.stringify(counter));
 
 
     const handleUserClick = () => {
@@ -13,15 +14,34 @@ const User1 = () => {
     const handleUserClick2 = () => {
         setShow(false)
     }
+
+    const userLevel = ()=> {
+       if (counter < 30) {
+           return "Mąż I poziomu"
+       }
+       else if ( counter < 70) {
+           return "Mąż II poziomu"
+       }
+       else if ( counter < 130) {
+           return "Mąż III poziomu"
+       }
+       else if ( counter < 200) {
+           return "Mąż IV poziomu"
+       } else {
+           return "MASTER"
+       }
+    }
+
+
     if (show === false) {
         return (
             <div onClick={handleUserClick} className="user1_box">
                 <div className="user_photo1"></div>
                 <div className="user1_info">
                     <h2 className="user1_title">Kuba</h2>
-                    <h3 className="user1_level">Mąż IV poziomu</h3>
+                    <h3 className="user1_level">{userLevel()}</h3>
                     <p className="user1_speciality"> Specjalność: “śmieci”</p>
-                    <h1 className="user1_points">{counter} ptk.</h1>
+                    <h1 className="user1_points"> {JSON.parse(window.localStorage.getItem('points'))} ptk.</h1>
                 </div>
             </div>
 
@@ -33,9 +53,9 @@ const User1 = () => {
                     <div className="user_photo1-2"></div>
                     <div className="user_info-2">
                         <h2 className="user_title-2">Kuba</h2>
-                        <h3 className="user_level-2">Mąż IV poziomu</h3>
+                        <h3 className="user_level-2">{userLevel()}</h3>
                         <p className="user_speciality-2"> Specjalność: “śmieci”</p>
-                        <h1 className="user_points-2">{counter} ptk</h1>
+                        <h1 className="user_points-2">{JSON.parse(window.localStorage.getItem('points'))} ptk</h1>
                     </div>
                 </div>
                 <div className="pages_container">
