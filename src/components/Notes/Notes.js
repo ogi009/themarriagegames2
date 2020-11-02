@@ -10,6 +10,7 @@ const Notes = () => {
     const [note2, setNote2] = useState("Kontakt");
     const [note3, setNote3] = useState("O co chodzi");
     const [pic, setPic] = useState(BackgroundImage3);
+    const [show, setShow] = useState(false);
 
     const note1Style = {
         height: "10rem",
@@ -17,6 +18,15 @@ const Notes = () => {
         backgroundImage: `url(${pic})`,
          backgroundSize: "cover",
     }
+    const sendMailStyle = {
+        width: "12rem",
+        height: "12rem",
+        backgroundColor: "rgb(248, 194, 74)",
+        boxShadow: "9px 10px 5px 0 rgba(0, 0, 0, 0.75)",
+        marginTop: "4rem",
+        transform: "scale(1.2)",
+    }
+
     const handleCLick = () => {
         setNote1(
             <div style={note1Style}></div>
@@ -55,14 +65,35 @@ const Notes = () => {
     const onMouseLeave3 = () => {
         setNote3("O co chodzi");
     }
+    const handleMail = () => {
+       setShow(true)
+    }
+    const handleMail2 = () => {
+        setShow(false)
+        console.log(show);
+    }
+    if ( show === false) {
         return (
             <div className="note_container">
                 <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={handleCLick} className="note1">{note1}</div>
-                <div onMouseEnter={onMouseEnter2} onMouseLeave={onMouseLeave2}  className="note2">{note2}</div>
+                <div onMouseEnter={onMouseEnter2} onMouseLeave={onMouseLeave2} onClick={handleMail} className="note2">{note2}</div>
                 <div onMouseEnter={onMouseEnter3} onMouseLeave={onMouseLeave3}  className="note3">{note3}</div>
             </div>
-        );
-
+        )
+    } else {
+        return (
+            <div style={sendMailStyle} className="send_mail">
+            <form action="mailto:ogi009@poczta.onet.pl" method="post">
+                <input placeholder="Imię"/>
+                <input placeholder="Nazwisko"/>
+                <input placeholder="email"/>
+                <input placeholder="treść wiadomości"/>
+                <button>Wyślij</button>
+            </form>
+                <button style={{marginTop: "1rem", marginLeft: "8rem"}} onClick={handleMail2}>Zamknij</button>
+            </div>
+        )
+            }
 
 };
 

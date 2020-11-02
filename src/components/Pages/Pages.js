@@ -5,7 +5,6 @@ import Buttons from "../Buttons/Buttons";
 const Pages = ({counter, setCounter}) => {
 
 
-
     const [show, setShow] = useState("none");
     const [show1, setShow1] = useState("none");
     const [show2, setShow2] = useState("none");
@@ -30,7 +29,6 @@ const Pages = ({counter, setCounter}) => {
     const broomPercent = `${(broomCounter * 100 / (broomCounter + 5)).toFixed(1)}`;
     const sinkPercent = `${(sinkCounter * 100 / (sinkCounter + 5)).toFixed(1)}`;
     const dinnerPercent = `${(dinnerCounter * 100 / (dinnerCounter + 5)).toFixed(1)}`;
-
 
 
     const dogStaticBarStyle = {
@@ -80,9 +78,10 @@ const Pages = ({counter, setCounter}) => {
     const [movieVote, setMovieVote] = useState([]);
     const [movieDescription, setMovieDescription] = useState([]);
     const [statusMessage, setStatusMessage] = useState([]);
+
     const handleMovie = () => {
 
-        const movie =  Math.floor(Math.random() * 1200)
+        const movie = Math.floor(Math.random() * 1200)
         console.log(movie);
 
         fetch(`https://api.themoviedb.org/3/movie/${movie}?api_key=3895cdfbe8f1bab08a6032d003acaf85`, {
@@ -96,7 +95,7 @@ const Pages = ({counter, setCounter}) => {
                 setMovieImg(`https://image.tmdb.org/t/p/w500/${data.poster_path}`);
                 setMovieVote(data.vote_average);
                 setStatusMessage(data.status_message);
-            } )
+            })
 
             .catch(err => {
                 console.log(err);
@@ -145,7 +144,8 @@ const Pages = ({counter, setCounter}) => {
                 <div className="statistic_container-bin"
                      style={{display: "flex", alignItems: "center", padding: "0.5rem"}}>
                     <p className="statistic_container-text">Wynoszenie śmieci</p>
-                    <p className="statistic_container-text" style={{marginRight: "0.5rem"}}>{binPercent}%</p>
+                    <p className="statistic_container-text"
+                       style={{marginRight: "0.5rem", marginLeft: "0.3rem"}}>{binPercent}%</p>
                     <div style={{display: "flex", width: "15rem", marginRight: "0.5rem"}}>
                         <div style={binStaticBarStyle} className="statistic_bar"></div>
                         <div style={{width: `${100 - binPercent}%`}} className="statistic_bar2"></div>
@@ -157,10 +157,10 @@ const Pages = ({counter, setCounter}) => {
                 <div className="statistic_container-broom"
                      style={{display: "flex", alignItems: "center", padding: "0.5rem"}}>
                     <p style={{marginRight: "1rem"}} className="statistic_container-text">Zamiatanie </p>
-                    <p className="statistic_container-text" style={{marginRight: "0.5rem"}}>{broomPercent}%</p>
+                    <p className="statistic_container-text" style={{marginRight: "0.3rem"}}>{broomPercent}%</p>
                     <div style={{display: "flex", width: "15rem", marginRight: "0.5rem"}}>
                         <div style={broomStaticBarStyle} className="statistic_bar"></div>
-                        <div style={{width: `${100 - binPercent}%`}} className="statistic_bar2"></div>
+                        <div style={{width: `${100 - broomPercent}%`}} className="statistic_bar2"></div>
                     </div>
                     <p className="statistic_container-text"
                        style={{marginRight: "0.5rem"}}>{(100 - broomPercent).toFixed(1)}%</p>
@@ -169,19 +169,19 @@ const Pages = ({counter, setCounter}) => {
                 <div className="statistic_container-sink"
                      style={{display: "flex", alignItems: "center", padding: "0.5rem"}}>
                     <p style={{marginRight: "1rem"}} className="statistic_container-text">Zmywanie</p>
-                    <p className="statistic_container-text" style={{marginRight: "0.5rem"}}>{sinkPercent}%</p>
-                    <div style={{display: "flex", width: "15rem", marginRight: "0.5rem"}}>
+                    <p className="statistic_container-text">{sinkPercent}%</p>
+                    <div style={{display: "flex", width: "15rem", marginRight: "0.8rem"}}>
                         <div style={sinkStaticBarStyle} className="statistic_bar"></div>
                         <div style={{width: `${100 - sinkPercent}%`}} className="statistic_bar2"></div>
                     </div>
                     <p className="statistic_container-text"
-                       style={{marginRight: "0.5rem"}}>{(100 - sinkPercent).toFixed(1)}%</p>
+                    >{(100 - sinkPercent).toFixed(1)}%</p>
                     <div className="small_user2"></div>
                 </div>
                 <div className="statistic_container-dinner"
                      style={{display: "flex", alignItems: "center", padding: "0.5rem"}}>
                     <p style={{marginRight: "1rem"}} className="statistic_container-text">Zrobienie obiadu</p>
-                    <p className="statistic_container-text" style={{marginRight: "0.5rem"}}>{dinnerPercent}%</p>
+                    <p className="statistic_container-text" style={{marginRight: "0.3rem"}}>{dinnerPercent}%</p>
                     <div style={{display: "flex", width: "15rem", marginRight: "0.5rem"}}>
                         <div style={dinnerStaticBarStyle} className="statistic_bar"></div>
                         <div style={{width: `${100 - dinnerPercent}%`}} className="statistic_bar2"></div>
@@ -194,18 +194,35 @@ const Pages = ({counter, setCounter}) => {
             </div>
             <div style={{display: show2}} className="details_container">
                 <ul>
-                    {getDate.map((e, i) => <li className="details_container-list" key={i}>{e} </li>)}
+                    {getDate.map((e, i) => <li style={{borderBottom: "1px dotted black"}}
+                                               className="details_container-list" key={i}>{e} </li>)}
                 </ul>
 
             </div>
-            <div style={{display: show3}} className="draw_container">
+            <div style={{display: show3, margin: "1rem"}} className="draw_container">
                 <button className="movie_draw_button" onClick={handleMovie}>Losuj Film</button>
                 <div style={{display: "flex"}}>
-                    <div style={{backgroundImage: `url(${movieImg})`, width: "5rem", height: "5rem", backgroundSize: "cover"}}></div>
-                    <div style={{fontSize: "2rem", color: "orange", marginTop: "0.5rem", textAlign: "center"}}>{(statusMessage === "The resource you requested could not be found.")? "Ups.. Losuj dalej" : movieData}</div>
+                    <div style={{
+                        backgroundImage: `url(${movieImg})`,
+                        width: "5rem",
+                        height: "5rem",
+                        backgroundSize: "cover",
+                        marginRight: "0.5rem"
+                    }}></div>
+                    <div style={{
+                        fontSize: "2rem",
+                        color: "orange",
+                        marginTop: "0.5rem",
+                        textAlign: "center"
+                    }}>{(statusMessage === "The resource you requested could not be found.") ? "Ups.. Losuj dalej" : movieData}</div>
                 </div>
                 <div>{movieDescription}</div>
-                <div style={{fontSize: "3rem", color: "violet", marginTop: "1rem", textAlign: "center"}}>{movieVote}</div>
+                <div style={{
+                    fontSize: "3rem",
+                    color: "violet",
+                    marginTop: "1rem",
+                    textAlign: "center"
+                }}>{movieVote}</div>
 
             </div>
         </div>
