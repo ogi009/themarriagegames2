@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "./_pages.scss";
 import Buttons from "../Buttons/Buttons";
 import MoviePage from "../MoviePage/MoviePage";
-import DetailsPage from "../DetailsPage/DetailsPage";
+// import DetailsPage from "../DetailsPage/DetailsPage";
 
 const Pages = ({counter, setCounter}) => {
 
@@ -164,7 +164,7 @@ const Pages = ({counter, setCounter}) => {
 
             </div>
             <div style={{display: show2}} className="details_container">
-                <DetailsPage props={getDate}/>
+                {/*<DetailsPage props={getDate}/>*/}
             </div>
             <div style={{display: show3, margin: "1rem"}} className="draw_container">
                 <MoviePage/>
