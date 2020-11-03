@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./_pages.scss";
 import Buttons from "../Buttons/Buttons";
 
@@ -11,18 +11,22 @@ const Pages = ({counter, setCounter}) => {
     const [show3, setShow3] = useState("none");
 
     const [dogCounter, setDogCounter] = useState(JSON.parse(window.localStorage.getItem('dog')));
-    window.localStorage.setItem(`dog`, JSON.stringify(dogCounter));
-    const [binCounter, setBinCounter] = useState(JSON.parse(window.localStorage.getItem('bin')));
-    window.localStorage.setItem(`bin`, JSON.stringify(binCounter));
-    const [broomCounter, setBroomCounter] = useState(JSON.parse(window.localStorage.getItem('broom')));
-    window.localStorage.setItem(`broom`, JSON.stringify(broomCounter));
-    const [sinkCounter, setSinkCounter] = useState(JSON.parse(window.localStorage.getItem('sink')));
-    window.localStorage.setItem(`sink`, JSON.stringify(sinkCounter));
-    const [dinnerCounter, setDinnerCounter] = useState(JSON.parse(window.localStorage.getItem('dinner')));
-    window.localStorage.setItem(`dinner`, JSON.stringify(dinnerCounter));
 
-    const [getDate, setGetDate] = useState([JSON.parse(window.localStorage.getItem('date'))]);
-    window.localStorage.setItem(`date`, JSON.stringify([getDate]));
+    const [binCounter, setBinCounter] = useState(JSON.parse(window.localStorage.getItem('bin')));
+
+    const [broomCounter, setBroomCounter] = useState(JSON.parse(window.localStorage.getItem('broom')));
+
+    const [sinkCounter, setSinkCounter] = useState(JSON.parse(window.localStorage.getItem('sink')));
+
+    const [dinnerCounter, setDinnerCounter] = useState(JSON.parse(window.localStorage.getItem('dinner')));
+
+
+    const [getDate, setGetDate] = useState([]);
+    useEffect( ()=>{
+        setGetDate(JSON.parse(window.localStorage.getItem(`date`)));
+
+    },[])
+
 
     const dogPercent = `${(dogCounter * 100 / (dogCounter + 5)).toFixed(1)}`;
     const binPercent = `${(binCounter * 100 / (binCounter + 5)).toFixed(1)}`;
@@ -50,27 +54,37 @@ const Pages = ({counter, setCounter}) => {
     const handleAddDogButton = () => {
         setCounter(counter + 1);
         setDogCounter(dogCounter + 1);
+        window.localStorage.setItem(`dog`, JSON.stringify(dogCounter));
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Spacer z Pieskiem!"]);
     };
     const handleAddBinButton = () => {
         setCounter(counter + 1);
         setBinCounter(binCounter + 1);
+        window.localStorage.setItem(`bin`, JSON.stringify(binCounter));
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Wyrzuciłeś śmieci!"]);
 
     }
     const handleAddBroomButton = () => {
         setCounter(counter + 1);
         setBroomCounter(broomCounter + 1);
+        window.localStorage.setItem(`broom`, JSON.stringify(broomCounter));
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zamiotłeś!"]);
     }
     const handleAddSinkButton = () => {
         setCounter(counter + 1);
         setSinkCounter(sinkCounter + 1);
+        window.localStorage.setItem(`sink`, JSON.stringify(sinkCounter));
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zmyłeś naczynia!!"]);
     }
     const handleAddDinnerButton = () => {
         setCounter(counter + 1);
         setDinnerCounter(dinnerCounter + 1);
+        window.localStorage.setItem(`dinner`, JSON.stringify(dinnerCounter));
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zrobiłeś obiad!"]);
     }
     const [movieData, setMovieData] = useState([]);
@@ -193,8 +207,8 @@ const Pages = ({counter, setCounter}) => {
 
             </div>
             <div style={{display: show2}} className="details_container">
-                <ul>
-                    {getDate.map((e, i) => <li style={{borderBottom: "1px dotted black"}}
+                <ul style={{padding: "1rem"}}>
+                    {getDate.map((e, i) => <li style={{borderBottom: "1px dotted black", listStyle: "disc"}}
                                                className="details_container-list" key={i}>{e} </li>)}
                 </ul>
 

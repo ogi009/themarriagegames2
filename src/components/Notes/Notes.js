@@ -12,6 +12,8 @@ const Notes = () => {
     const [pic, setPic] = useState(BackgroundImage3);
     const [show, setShow] = useState(false);
 
+    const [mail, setMail] = useState("")
+
     const note1Style = {
         height: "10rem",
         width: "13rem",
@@ -68,9 +70,11 @@ const Notes = () => {
     const handleMail = () => {
        setShow(true)
     }
-    const handleMail2 = () => {
+    const showForm = () => {
         setShow(false)
-        console.log(show);
+    }
+    const handleSubmit = (e) => {
+
     }
     if ( show === false) {
         return (
@@ -83,14 +87,19 @@ const Notes = () => {
     } else {
         return (
             <div style={sendMailStyle} className="send_mail">
-            <form action="mailto:ogi009@poczta.onet.pl" method="post">
-                <input placeholder="Imię"/>
-                <input placeholder="Nazwisko"/>
-                <input placeholder="email"/>
-                <input placeholder="treść wiadomości"/>
-                <button>Wyślij</button>
+            <form className="form" onSubmit={handleSubmit}>
+                <label>
+                    <input type="text"  placeholder="Imię"/></label>
+                <label>
+                    <input type="email" value={mail} onChange={e => setMail(e.target.value)} placeholder="Imię" placeholder="email"/>
+                    </label>
+                <label>
+                    <textarea style={{marginTop: "0.3rem"}} placeholder="treść wiadomości"/>
+                </label>
+
+                <button >Wyślij</button>
             </form>
-                <button style={{marginTop: "1rem", marginLeft: "8rem"}} onClick={handleMail2}>Zamknij</button>
+                <button style={{marginTop: "1rem", marginLeft: "8rem"}} onClick={showForm}>Zamknij</button>
             </div>
         )
             }
