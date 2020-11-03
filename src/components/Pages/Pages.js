@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import "./_pages.scss";
 import Buttons from "../Buttons/Buttons";
+import MoviePage from "../MoviePage/MoviePage";
+import DetailsPage from "../DetailsPage/DetailsPage";
 
 const Pages = ({counter, setCounter}) => {
-
 
     const [show, setShow] = useState("none");
     const [show1, setShow1] = useState("none");
@@ -11,15 +12,10 @@ const Pages = ({counter, setCounter}) => {
     const [show3, setShow3] = useState("none");
 
     const [dogCounter, setDogCounter] = useState(JSON.parse(window.localStorage.getItem('dog')));
-
     const [binCounter, setBinCounter] = useState(JSON.parse(window.localStorage.getItem('bin')));
-
     const [broomCounter, setBroomCounter] = useState(JSON.parse(window.localStorage.getItem('broom')));
-
     const [sinkCounter, setSinkCounter] = useState(JSON.parse(window.localStorage.getItem('sink')));
-
     const [dinnerCounter, setDinnerCounter] = useState(JSON.parse(window.localStorage.getItem('dinner')));
-
 
     const [getDate, setGetDate] = useState([]);
     useEffect( ()=>{
@@ -27,13 +23,11 @@ const Pages = ({counter, setCounter}) => {
 
     },[])
 
-
     const dogPercent = `${(dogCounter * 100 / (dogCounter + 5)).toFixed(1)}`;
     const binPercent = `${(binCounter * 100 / (binCounter + 5)).toFixed(1)}`;
     const broomPercent = `${(broomCounter * 100 / (broomCounter + 5)).toFixed(1)}`;
     const sinkPercent = `${(sinkCounter * 100 / (sinkCounter + 5)).toFixed(1)}`;
     const dinnerPercent = `${(dinnerCounter * 100 / (dinnerCounter + 5)).toFixed(1)}`;
-
 
     const dogStaticBarStyle = {
         width: `${dogPercent}%`,
@@ -87,42 +81,6 @@ const Pages = ({counter, setCounter}) => {
         window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zrobiłeś obiad!"]);
     }
-    const [movieData, setMovieData] = useState([]);
-    const [movieImg, setMovieImg] = useState([]);
-    const [movieVote, setMovieVote] = useState([]);
-    const [movieDescription, setMovieDescription] = useState([]);
-    const [statusMessage, setStatusMessage] = useState([]);
-
-    const handleMovie = () => {
-
-        const movie = Math.floor(Math.random() * 1200)
-        console.log(movie);
-
-        fetch(`https://api.themoviedb.org/3/movie/${movie}?api_key=3895cdfbe8f1bab08a6032d003acaf85`, {
-            "method": "GET",
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setMovieData(data.original_title);
-                setMovieDescription(data.overview);
-                setMovieImg(`https://image.tmdb.org/t/p/w500/${data.poster_path}`);
-                setMovieVote(data.vote_average);
-                setStatusMessage(data.status_message);
-            })
-
-            .catch(err => {
-                console.log(err);
-            })
-    }
-
-    // const userSpeciality = () => {
-    //     if (dogCounter > binCounter && dogCounter > broomCounter && dogCounter > sinkCounter && dogCounter > dinnerCounter){
-    //         return "piesio"
-    //     } else if (binCounter > dogCounter && binCounter > broomCounter && binCounter > sinkCounter && binCounter > dinnerCounter) {
-    //         return "śmieci"
-    //     }
-    // }
 
     return (
         <div>
@@ -140,7 +98,6 @@ const Pages = ({counter, setCounter}) => {
                 </button>
                 <button className="add_container_buttons"><i onClick={handleAddDinnerButton}
                                                              className="fas fa-utensils"></i></button>
-
             </div>
             <div style={{display: show1}} className="statistic_container">
                 <div className="statistic_container-dog"
@@ -207,37 +164,10 @@ const Pages = ({counter, setCounter}) => {
 
             </div>
             <div style={{display: show2}} className="details_container">
-                <ul style={{padding: "1rem"}}>
-                    {getDate.map((e, i) => <li style={{borderBottom: "1px dotted black", listStyle: "disc"}}
-                                               className="details_container-list" key={i}>{e} </li>)}
-                </ul>
-
+                <DetailsPage props={getDate}/>
             </div>
             <div style={{display: show3, margin: "1rem"}} className="draw_container">
-                <button className="movie_draw_button" onClick={handleMovie}>Losuj Film</button>
-                <div style={{display: "flex"}}>
-                    <div style={{
-                        backgroundImage: `url(${movieImg})`,
-                        width: "5rem",
-                        height: "5rem",
-                        backgroundSize: "cover",
-                        marginRight: "0.5rem"
-                    }}></div>
-                    <div style={{
-                        fontSize: "2rem",
-                        color: "orange",
-                        marginTop: "0.5rem",
-                        textAlign: "center"
-                    }}>{(statusMessage === "The resource you requested could not be found.") ? "Ups.. Losuj dalej" : movieData}</div>
-                </div>
-                <div>{movieDescription}</div>
-                <div style={{
-                    fontSize: "3rem",
-                    color: "violet",
-                    marginTop: "1rem",
-                    textAlign: "center"
-                }}>{movieVote}</div>
-
+                <MoviePage/>
             </div>
         </div>
     );

@@ -91,7 +91,7 @@ const Notes = () => {
                 <label>
                     <input type="text"  placeholder="Imię"/></label>
                 <label>
-                    <input type="email" value={mail} onChange={e => setMail(e.target.value)} placeholder="Imię" placeholder="email"/>
+                    <input type="email" value={mail} onChange={e => setMail(e.target.value)} placeholder="email"/>
                     </label>
                 <label>
                     <textarea style={{marginTop: "0.3rem"}} placeholder="treść wiadomości"/>

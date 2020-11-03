@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './_mainPage.scss';
 import User1 from "../../components/User1/User1";
 import User2 from "../../components/user2/User2";

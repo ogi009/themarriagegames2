@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './_clock.scss'
 
 
-
 const Clock = () => {
     const [rotateSec, setRotateSec] = useState(240);
     const [rotateMin, setRotateMin] = useState(45);
@@ -11,9 +10,9 @@ const Clock = () => {
     const styleSec = {
         height: "6rem",
         width: "0.2rem",
-        backgroundColor:  "red",
+        backgroundColor: "red",
         position: "absolute",
-         left: "0.4rem",
+        left: "0.4rem",
         top: "0.3rem",
         transformOrigin: "top left",
         transform: `rotate(${rotateSec}deg)`
@@ -21,7 +20,7 @@ const Clock = () => {
     const styleMin = {
         height: "5rem",
         width: "0.2rem",
-        backgroundColor:  "rgb(79, 76, 77)",
+        backgroundColor: "rgb(79, 76, 77)",
         position: "absolute",
         left: "0.4rem",
         top: "0.3rem",
@@ -31,7 +30,7 @@ const Clock = () => {
     const styleHour = {
         height: "4rem",
         width: "0.2rem",
-        backgroundColor:  "rgb(79, 76, 77)",
+        backgroundColor: "rgb(79, 76, 77)",
         position: "absolute",
         left: "0.4rem",
         top: "0.3rem",
@@ -39,9 +38,15 @@ const Clock = () => {
         transform: `rotate(${rotateHour}deg)`
     }
 
-   setTimeout(() => {
+    setTimeout(() => {
         setRotateSec(rotateSec + 6);
-    },1000)
+    }, 1000)
+    setTimeout(() => {
+        setRotateMin(rotateMin + 6);
+    }, 60000)
+    setTimeout(() => {
+        setRotateHour(rotateHour + 15);
+    }, 600000)
 
 
     return (
