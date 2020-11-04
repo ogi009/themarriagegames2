@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './_mainPage.scss';
-import User1 from "../../components/User1/User1";
-import User2 from "../../components/user2/User2";
+import User1 from "../User1/User1";
+import User2 from "../user2/User2";
 
 
 const MainPage = () => {

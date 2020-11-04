@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import "./_user2Pages.scss";
-import Buttons from "../Buttons/Buttons";
-import MoviePage from "../MoviePage/MoviePage";
-import User2DetailsPage from "../User2DetailPage/User2DetailPage";
-import DateListUser2 from "../DateListUser2/DateListUser2";
+import Buttons from "../../components/Buttons/Buttons";
+import MoviePage from "../../components/MoviePage/MoviePage";
+import User2DetailsPage from "../../components/User2DetailPage/User2DetailPage";
+import DateListUser2 from "../../components/DateListUser2/DateListUser2";
 
 const User2Pages = ({counter, setCounter}) => {
 
