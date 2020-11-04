@@ -3,6 +3,7 @@ import "./_user1Pages.scss";
 import Buttons from "../Buttons/Buttons";
 import MoviePage from "../MoviePage/MoviePage";
 import User1DetailsPage from "../User1DetailsPage/User1DetailsPage";
+import DateList from "../DateListUser1/DateList";
 
 const User1Pages = ({counter, setCounter}) => {
 
@@ -174,8 +175,8 @@ const User1Pages = ({counter, setCounter}) => {
             <div style={{display: show3, margin: "1rem"}} className="draw_container">
                 <MoviePage/>
             </div>
-            <div style={{display: show4, margin: "1rem"}} className="draw_container">
-                <MoviePage/>
+            <div style={{display: show4, margin: "1rem"}} className="date_container">
+                <DateList/>
             </div>
         </div>
     );
