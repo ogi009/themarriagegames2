@@ -10,18 +10,26 @@ const User1Pages = ({counter, setCounter}) => {
     const [show1, setShow1] = useState("none");
     const [show2, setShow2] = useState("none");
     const [show3, setShow3] = useState("none");
+    const [show4, setShow4] = useState("none");
 
     const [dogCounter, setDogCounter] = useState(JSON.parse(window.localStorage.getItem('dog')));
+    window.localStorage.setItem(`dog`, JSON.stringify(dogCounter));
     const [binCounter, setBinCounter] = useState(JSON.parse(window.localStorage.getItem('bin')));
+    window.localStorage.setItem(`bin`, JSON.stringify(binCounter));
     const [broomCounter, setBroomCounter] = useState(JSON.parse(window.localStorage.getItem('broom')));
+    window.localStorage.setItem(`broom`, JSON.stringify(broomCounter));
     const [sinkCounter, setSinkCounter] = useState(JSON.parse(window.localStorage.getItem('sink')));
+    window.localStorage.setItem(`sink`, JSON.stringify(sinkCounter));
     const [dinnerCounter, setDinnerCounter] = useState(JSON.parse(window.localStorage.getItem('dinner')));
+    window.localStorage.setItem(`dinner`, JSON.stringify(dinnerCounter));
 
     const [getDate, setGetDate] = useState([]);
 
     useEffect( () => {
-        setGetDate(JSON.parse(window.localStorage.getItem(`date`)));
-        console.log(getDate);
+        if (window.localStorage.getItem(`date`) !== null)  {
+            setGetDate(JSON.parse(window.localStorage.getItem(`date`)));
+        }
+
     },[])
 
 
@@ -51,16 +59,12 @@ const User1Pages = ({counter, setCounter}) => {
     const handleAddDogButton = () => {
         setDogCounter(dogCounter + 1);
         setCounter(counter + 1);
-        console.log(counter);
-        console.log(dogCounter);
-        window.localStorage.setItem(`dog`, JSON.stringify(dogCounter));
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Spacer z Pieskiem!"]);
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
     };
     const handleAddBinButton = () => {
         setCounter(counter + 1);
         setBinCounter(binCounter + 1);
-        window.localStorage.setItem(`bin`, JSON.stringify(binCounter));
         window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Wyrzuciłeś śmieci!"]);
 
@@ -68,21 +72,18 @@ const User1Pages = ({counter, setCounter}) => {
     const handleAddBroomButton = () => {
         setCounter(counter + 1);
         setBroomCounter(broomCounter + 1);
-        window.localStorage.setItem(`broom`, JSON.stringify(broomCounter));
         window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zamiotłeś!"]);
     }
     const handleAddSinkButton = () => {
         setCounter(counter + 1);
         setSinkCounter(sinkCounter + 1);
-        window.localStorage.setItem(`sink`, JSON.stringify(sinkCounter));
         window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zmyłeś naczynia!!"]);
     }
     const handleAddDinnerButton = () => {
         setCounter(counter + 1);
         setDinnerCounter(dinnerCounter + 1);
-        window.localStorage.setItem(`dinner`, JSON.stringify(dinnerCounter));
         window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zrobiłeś obiad!"]);
     }
@@ -90,7 +91,7 @@ const User1Pages = ({counter, setCounter}) => {
     return (
         <div>
             <Buttons show={show} setShow={setShow} show1={show1} setShow1={setShow1} show2={show2} setShow2={setShow2}
-                     show3={show3} setShow3={setShow3}/>
+                     show3={show3} setShow3={setShow3} show4={show4} setShow4={setShow4}/>
 
             <div style={{display: show}} className="add_container">
                 <button className="add_container_buttons"><i onClick={handleAddDogButton} className="fas fa-dog"></i>
@@ -172,6 +173,9 @@ const User1Pages = ({counter, setCounter}) => {
                 <User1DetailsPage props={getDate}/>
             </div>
             <div style={{display: show3, margin: "1rem"}} className="draw_container">
+                <MoviePage/>
+            </div>
+            <div style={{display: show4, margin: "1rem"}} className="draw_container">
                 <MoviePage/>
             </div>
         </div>

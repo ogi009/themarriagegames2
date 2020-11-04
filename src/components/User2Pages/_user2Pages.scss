@@ -124,4 +124,9 @@
   flex-direction: column;
   align-items: center;
 }
-
+.idea_container {
+  font-family: $mainFont2;
+  color: white;
+  overflow: auto;
+  max-height: 350px;
+}

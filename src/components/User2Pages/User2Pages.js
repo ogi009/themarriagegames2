@@ -10,13 +10,18 @@ const User2Pages = ({counter, setCounter}) => {
     const [show1, setShow1] = useState("none");
     const [show2, setShow2] = useState("none");
     const [show3, setShow3] = useState("none");
+    const [show4, setShow4] = useState("none");
 
     const [dogCounter, setDogCounter] = useState(JSON.parse(window.localStorage.getItem('dog2')));
-
+    window.localStorage.setItem(`dog2`, JSON.stringify(dogCounter));
     const [binCounter, setBinCounter] = useState(JSON.parse(window.localStorage.getItem('bin2')));
+    window.localStorage.setItem(`bin2`, JSON.stringify(binCounter));
     const [broomCounter, setBroomCounter] = useState(JSON.parse(window.localStorage.getItem('broom2')));
+    window.localStorage.setItem(`broom2`, JSON.stringify(broomCounter));
     const [sinkCounter, setSinkCounter] = useState(JSON.parse(window.localStorage.getItem('sink2')));
+    window.localStorage.setItem(`sink2`, JSON.stringify(sinkCounter));
     const [dinnerCounter, setDinnerCounter] = useState(JSON.parse(window.localStorage.getItem('dinner2')));
+    window.localStorage.setItem(`dinner2`, JSON.stringify(dinnerCounter));
 
     const [getDate, setGetDate] = useState([]);
     useEffect( ()=>{
@@ -49,14 +54,12 @@ const User2Pages = ({counter, setCounter}) => {
     const handleAddDogButton = () => {
         setCounter(counter + 1);
         setDogCounter(dogCounter + 1);
-        window.localStorage.setItem(`dog2`, JSON.stringify(dogCounter));
         window.localStorage.setItem(`date2`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Spacer z Pieskiem!"]);
     };
     const handleAddBinButton = () => {
         setCounter(counter + 1);
         setBinCounter(binCounter + 1);
-        window.localStorage.setItem(`bin2`, JSON.stringify(binCounter));
         window.localStorage.setItem(`date2`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Wyrzuciłeś śmieci!"]);
 
@@ -64,21 +67,18 @@ const User2Pages = ({counter, setCounter}) => {
     const handleAddBroomButton = () => {
         setCounter(counter + 1);
         setBroomCounter(broomCounter + 1);
-        window.localStorage.setItem(`broom2`, JSON.stringify(broomCounter));
         window.localStorage.setItem(`date2`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zamiotłeś!"]);
     }
     const handleAddSinkButton = () => {
         setCounter(counter + 1);
         setSinkCounter(sinkCounter + 1);
-        window.localStorage.setItem(`sink2`, JSON.stringify(sinkCounter));
         window.localStorage.setItem(`date2`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zmyłeś naczynia!!"]);
     }
     const handleAddDinnerButton = () => {
         setCounter(counter + 1);
         setDinnerCounter(dinnerCounter + 1);
-        window.localStorage.setItem(`dinner2`, JSON.stringify(dinnerCounter));
         window.localStorage.setItem(`date2`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zrobiłeś obiad!"]);
     }
@@ -86,7 +86,7 @@ const User2Pages = ({counter, setCounter}) => {
     return (
         <div>
             <Buttons show={show} setShow={setShow} show1={show1} setShow1={setShow1} show2={show2} setShow2={setShow2}
-                     show3={show3} setShow3={setShow3}/>
+                     show3={show3} setShow3={setShow3} show4={show4} setShow4={setShow4}/>
 
             <div style={{display: show}} className="add_container">
                 <button className="add_container_buttons"><i onClick={handleAddDogButton} className="fas fa-dog"></i>
@@ -169,6 +169,9 @@ const User2Pages = ({counter, setCounter}) => {
             </div>
             <div style={{display: show3, margin: "1rem"}} className="draw_container">
                 <MoviePage/>
+            </div>
+            <div style={{display: show4, margin: "1rem"}} className="idea_container">
+               <div>Kupsko</div>
             </div>
         </div>
     );

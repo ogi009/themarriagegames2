@@ -11,7 +11,7 @@ const MainPage = () => {
         height: "25rem"
     };
     const [showUser1, setShowUser1] = useState(true);
-    const [showUser2, setShowUser2] = useState(true);
+    const [showUser2, setShowUser2] = useState(false);
 
 
     const handleCLick1 = () => {
@@ -21,8 +21,8 @@ const MainPage = () => {
         setShowUser2(false);
     }
     const handleCLick3 = ()=> {
-        setShowUser1(true);
-        setShowUser2(true);
+        setShowUser1(!showUser1);
+        setShowUser2(!showUser2);
     }
 
     return (
@@ -33,10 +33,10 @@ const MainPage = () => {
                 <div onClick={handleCLick1}> {showUser2 ? <User1/> : ""}</div>
                 <div onClick={handleCLick2}> {showUser1 ? <User2/> : ""}</div>
             </div>
-            <div className="main_page_container-3" style={style}></div>
-            <div className="main_page_container-4" style={style}>
+            <div className="main_page_container-3" style={style}>
                 <button className="change_user_button" onClick={handleCLick3}> Wybierz Użytownika</button>
             </div>
+            <div className="main_page_container-4" style={style}></div>
 
         </div>
     );

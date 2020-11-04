@@ -1,11 +1,12 @@
 import React from 'react';
 
 const User1DetailsPage = ({props}) => {
+    console.log(props);
     return (
         <>
             <ul style={{padding: "1rem"}}>
-                { props && props.map((e, i) => <li style={{borderBottom: "1px dotted black", listStyle: "disc"}}
-                                           className="details_container-list" key={i}>{e} </li>)}
+                {props.length > 0 ? props.map((e, i) => <li style={{borderBottom: "1px dotted black", listStyle: "disc"}}
+                                           className="details_container-list" key={i}>{e} </li>): null}
             </ul>
         </>
     );
