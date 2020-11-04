@@ -1,0 +1,127 @@
+@import "src/styles/colors";
+@import "src/styles/fonts";
+
+.add_container {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2rem;
+  height: 15rem;
+  width: 30rem;
+  padding-right: 2rem;
+}
+.add_container_buttons {
+  border-radius: 50%;
+  outline: none;
+  background: none;
+  border: none;
+}
+.fas {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  font-size: 5rem;
+  color: white;
+  margin: 2rem;
+}
+.fas:hover {
+  color: $orangeBGCardColor ;
+}
+.details_container{
+  max-height: 20rem;
+  margin: 1rem;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 1rem;
+  font-family: $headerFont;
+  color: white;
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+}
+
+
+.details_container::-webkit-scrollbar {
+  background: none;
+  width: 2rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+.details_container::-webkit-scrollbar-thumb {
+  background: white;
+  background-image: url("../../images/user2.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+.details_container-list {
+  list-style: none;
+  color: $orangeBGCardColor;
+}
+.statistic_bar {
+  height: 2rem;
+  background-color: greenyellow;
+}
+.statistic_bar2 {
+  height: 2rem;
+  background-color: red;
+}
+.small_user1 {
+  width: 3rem;
+  height: 3rem;
+  background-image: url("../../images/user1.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+.statistic_container-text {
+  font-family: $mainFont2;
+  color: white;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 4rem;
+  margin-right: 0.3rem;
+}
+.statistic_container-dog:hover {
+  transform: scale(2);
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+  border: 0.5rem solid $orangeBGCardColor;
+}
+.statistic_container-bin:hover {
+  transform: scale(2);
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+  border: 0.5rem solid $orangeBGCardColor;
+}
+.statistic_container-broom:hover {
+  transform: scale(2);
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+  border: 0.5rem solid $orangeBGCardColor;
+}
+.statistic_container-sink:hover {
+  transform: scale(2);
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+  border: 0.5rem solid $orangeBGCardColor;
+}
+.statistic_container-dinner:hover {
+  transform: scale(2);
+  background-color: $violetBgCardColor;
+  border-radius: 2rem;
+  border: 0.5rem solid $orangeBGCardColor;
+}
+.draw_container {
+  font-family: $mainFont2;
+  color: white;
+  overflow: auto;
+  max-height: 350px;
+}
+.draw_container::-webkit-scrollbar {
+  background: none;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

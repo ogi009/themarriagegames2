@@ -15,15 +15,15 @@
   box-shadow: 0.56rem 0.625rem 0.31rem 0 rgba(0,0,0,.75);
   position: absolute;
   top: 6rem;
-  right:10rem;
-  z-index: 0;
+  right:10rem ;
 }
 .user2_box:hover {
   transform: scale(3);
   position: absolute;
   top: 9rem;
+  z-index: 1;
 }
-.user2_photo2 {
+.user2_photo1 {
   background-image: url("../../images/user2.jpg");
   background-size: cover;
   background-position: center;
@@ -72,7 +72,7 @@
   justify-content: space-between;
   padding-left: 1rem;
   box-shadow: 0.56rem 0.625rem 0.31rem 0 rgba(0,0,0,.75);
-
+  z-index: 3;
 }
 
 .user2_photo1-2 {
@@ -115,14 +115,16 @@
   font-family: $headerFont;
   margin-top: 3rem;
 }
-.pages_container2 {
-  width: 100%;
+.pages_container {
+  width: 56%;
   height: 92%;
-  margin: 1.5rem 0 1.5rem 1.5rem;
+  margin-top: 1.4rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   background-color: $clockColor;
   border-radius: 2rem;
 }
-.pages_container-close_button2 {
+.pages_container-close_button {
   height: 2rem;
   width: 2rem;
   border-radius: 50%;

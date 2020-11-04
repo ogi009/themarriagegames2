@@ -1,3 +1,6 @@
+@import "src/styles/colors";
+@import "src/styles/fonts";
+
 .main_page_container {
   margin: 0 auto;
   width: 100%;
@@ -8,4 +11,18 @@
 .main_page_container-2 {
   position: relative;
 }
+.main_page_container-4 {
+  display: flex;
+  align-items: center;
+}
 
+.change_user_button {
+  font-family: $mainFont2;
+  color: white;
+  background-color: $orangeBGCardColor;
+  outline: none;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0.56rem 0.625rem 0.31rem 0 rgba(0,0,0,.75);
+  padding: 1rem;
+}

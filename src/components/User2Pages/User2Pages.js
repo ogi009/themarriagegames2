@@ -1,33 +1,34 @@
 import React, {useState, useEffect} from 'react';
-import "./_pages.scss";
+import "./_user2Pages.scss";
 import Buttons from "../Buttons/Buttons";
 import MoviePage from "../MoviePage/MoviePage";
-// import DetailsPage from "../DetailsPage/DetailsPage";
+import User2DetailsPage from "../User2DetailPage/User2DetailPage";
 
-const Pages = ({counter, setCounter}) => {
+const User2Pages = ({counter, setCounter}) => {
 
     const [show, setShow] = useState("none");
     const [show1, setShow1] = useState("none");
     const [show2, setShow2] = useState("none");
     const [show3, setShow3] = useState("none");
 
-    const [dogCounter, setDogCounter] = useState(JSON.parse(window.localStorage.getItem('dog')));
-    const [binCounter, setBinCounter] = useState(JSON.parse(window.localStorage.getItem('bin')));
-    const [broomCounter, setBroomCounter] = useState(JSON.parse(window.localStorage.getItem('broom')));
-    const [sinkCounter, setSinkCounter] = useState(JSON.parse(window.localStorage.getItem('sink')));
-    const [dinnerCounter, setDinnerCounter] = useState(JSON.parse(window.localStorage.getItem('dinner')));
+    const [dogCounter, setDogCounter] = useState(JSON.parse(window.localStorage.getItem('dog2')));
+
+    const [binCounter, setBinCounter] = useState(JSON.parse(window.localStorage.getItem('bin2')));
+    const [broomCounter, setBroomCounter] = useState(JSON.parse(window.localStorage.getItem('broom2')));
+    const [sinkCounter, setSinkCounter] = useState(JSON.parse(window.localStorage.getItem('sink2')));
+    const [dinnerCounter, setDinnerCounter] = useState(JSON.parse(window.localStorage.getItem('dinner2')));
 
     const [getDate, setGetDate] = useState([]);
     useEffect( ()=>{
-        setGetDate(JSON.parse(window.localStorage.getItem(`date`)));
+        setGetDate(JSON.parse(window.localStorage.getItem(`date2`)));
 
     },[])
 
-    const dogPercent = `${(dogCounter * 100 / (dogCounter + 5)).toFixed(1)}`;
-    const binPercent = `${(binCounter * 100 / (binCounter + 5)).toFixed(1)}`;
-    const broomPercent = `${(broomCounter * 100 / (broomCounter + 5)).toFixed(1)}`;
-    const sinkPercent = `${(sinkCounter * 100 / (sinkCounter + 5)).toFixed(1)}`;
-    const dinnerPercent = `${(dinnerCounter * 100 / (dinnerCounter + 5)).toFixed(1)}`;
+    const dogPercent = `${(dogCounter * 100 / (dogCounter + JSON.parse(window.localStorage.getItem('dog')))).toFixed(1)}`;
+    const binPercent = `${(binCounter * 100 / (binCounter + JSON.parse(window.localStorage.getItem('bin')))).toFixed(1)}`;
+    const broomPercent = `${(broomCounter * 100 / (broomCounter + JSON.parse(window.localStorage.getItem('broom')))).toFixed(1)}`;
+    const sinkPercent = `${(sinkCounter * 100 / (sinkCounter + JSON.parse(window.localStorage.getItem('sink')))).toFixed(1)}`;
+    const dinnerPercent = `${(dinnerCounter * 100 / (dinnerCounter + JSON.parse(window.localStorage.getItem('dinner')))).toFixed(1)}`;
 
     const dogStaticBarStyle = {
         width: `${dogPercent}%`,
@@ -48,37 +49,37 @@ const Pages = ({counter, setCounter}) => {
     const handleAddDogButton = () => {
         setCounter(counter + 1);
         setDogCounter(dogCounter + 1);
-        window.localStorage.setItem(`dog`, JSON.stringify(dogCounter));
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
+        window.localStorage.setItem(`dog2`, JSON.stringify(dogCounter));
+        window.localStorage.setItem(`date2`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Spacer z Pieskiem!"]);
     };
     const handleAddBinButton = () => {
         setCounter(counter + 1);
         setBinCounter(binCounter + 1);
-        window.localStorage.setItem(`bin`, JSON.stringify(binCounter));
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
+        window.localStorage.setItem(`bin2`, JSON.stringify(binCounter));
+        window.localStorage.setItem(`date2`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Wyrzuciłeś śmieci!"]);
 
     }
     const handleAddBroomButton = () => {
         setCounter(counter + 1);
         setBroomCounter(broomCounter + 1);
-        window.localStorage.setItem(`broom`, JSON.stringify(broomCounter));
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
+        window.localStorage.setItem(`broom2`, JSON.stringify(broomCounter));
+        window.localStorage.setItem(`date2`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zamiotłeś!"]);
     }
     const handleAddSinkButton = () => {
         setCounter(counter + 1);
         setSinkCounter(sinkCounter + 1);
-        window.localStorage.setItem(`sink`, JSON.stringify(sinkCounter));
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
+        window.localStorage.setItem(`sink2`, JSON.stringify(sinkCounter));
+        window.localStorage.setItem(`date2`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zmyłeś naczynia!!"]);
     }
     const handleAddDinnerButton = () => {
         setCounter(counter + 1);
         setDinnerCounter(dinnerCounter + 1);
-        window.localStorage.setItem(`dinner`, JSON.stringify(dinnerCounter));
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
+        window.localStorage.setItem(`dinner2`, JSON.stringify(dinnerCounter));
+        window.localStorage.setItem(`date2`, JSON.stringify([...getDate]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zrobiłeś obiad!"]);
     }
 
@@ -110,7 +111,7 @@ const Pages = ({counter, setCounter}) => {
                     </div>
                     <p className="statistic_container-text"
                        style={{marginRight: "0.5rem"}}>{(100 - dogPercent).toFixed(1)}%</p>
-                    <div className="small_user2"></div>
+                    <div className="small_user1"></div>
                 </div>
                 <div className="statistic_container-bin"
                      style={{display: "flex", alignItems: "center", padding: "0.5rem"}}>
@@ -123,7 +124,7 @@ const Pages = ({counter, setCounter}) => {
                     </div>
                     <p className="statistic_container-text"
                        style={{marginRight: "0.5rem"}}>{(100 - binPercent).toFixed(1)}%</p>
-                    <div className="small_user2"></div>
+                    <div className="small_user1"></div>
                 </div>
                 <div className="statistic_container-broom"
                      style={{display: "flex", alignItems: "center", padding: "0.5rem"}}>
@@ -135,7 +136,7 @@ const Pages = ({counter, setCounter}) => {
                     </div>
                     <p className="statistic_container-text"
                        style={{marginRight: "0.5rem"}}>{(100 - broomPercent).toFixed(1)}%</p>
-                    <div className="small_user2"></div>
+                    <div className="small_user1"></div>
                 </div>
                 <div className="statistic_container-sink"
                      style={{display: "flex", alignItems: "center", padding: "0.5rem"}}>
@@ -147,7 +148,7 @@ const Pages = ({counter, setCounter}) => {
                     </div>
                     <p className="statistic_container-text"
                     >{(100 - sinkPercent).toFixed(1)}%</p>
-                    <div className="small_user2"></div>
+                    <div className="small_user1"></div>
                 </div>
                 <div className="statistic_container-dinner"
                      style={{display: "flex", alignItems: "center", padding: "0.5rem"}}>
@@ -159,12 +160,12 @@ const Pages = ({counter, setCounter}) => {
                     </div>
                     <p className="statistic_container-text"
                        style={{marginRight: "0.5rem"}}>{(100 - dinnerPercent).toFixed(1)}%</p>
-                    <div className="small_user2"></div>
+                    <div className="small_user1"></div>
                 </div>
 
             </div>
             <div style={{display: show2}} className="details_container">
-                {/*<DetailsPage props={getDate}/>*/}
+                <User2DetailsPage props={getDate}/>
             </div>
             <div style={{display: show3, margin: "1rem"}} className="draw_container">
                 <MoviePage/>
@@ -173,4 +174,4 @@ const Pages = ({counter, setCounter}) => {
     );
 };
 
-export default Pages;
+export default User2Pages;

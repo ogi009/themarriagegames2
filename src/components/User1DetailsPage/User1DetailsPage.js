@@ -1,14 +1,14 @@
 import React from 'react';
 
-const DetailsPage = ({props}) => {
+const User1DetailsPage = ({props}) => {
     return (
         <>
             <ul style={{padding: "1rem"}}>
-                {props.map((e, i) => <li style={{borderBottom: "1px dotted black", listStyle: "disc"}}
+                { props && props.map((e, i) => <li style={{borderBottom: "1px dotted black", listStyle: "disc"}}
                                            className="details_container-list" key={i}>{e} </li>)}
             </ul>
         </>
     );
 };
 
-export default DetailsPage;
+export default User1DetailsPage;

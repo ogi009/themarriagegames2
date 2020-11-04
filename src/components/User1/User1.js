@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./_user1.scss"
-import Pages from "../Pages/Pages";
+import User1Pages from "../User1Pages/User1Pages";
 
 const User1 = () => {
     const [show, setShow] = useState(false);
@@ -44,7 +44,6 @@ const User1 = () => {
                     <h1 className="user1_points"> {JSON.parse(window.localStorage.getItem('points'))} ptk.</h1>
                 </div>
             </div>
-
         );
     } else {
         return (
@@ -59,7 +58,7 @@ const User1 = () => {
                     </div>
                 </div>
                 <div className="pages_container">
-                    <Pages counter={counter} setCounter={setCounter}/>
+                    <User1Pages counter={counter} setCounter={setCounter}/>
                 </div>
                 <button onClick={handleUserClick2} className="pages_container-close_button">X</button>
             </div>

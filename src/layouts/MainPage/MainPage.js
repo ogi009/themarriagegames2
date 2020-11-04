@@ -20,6 +20,11 @@ const MainPage = () => {
     const handleCLick2 = () => {
         setShowUser2(false);
     }
+    const handleCLick3 = ()=> {
+        setShowUser1(true);
+        setShowUser2(true);
+    }
+
     return (
         <div className="main_page_container">
 
@@ -28,10 +33,10 @@ const MainPage = () => {
                 <div onClick={handleCLick1}> {showUser2 ? <User1/> : ""}</div>
                 <div onClick={handleCLick2}> {showUser1 ? <User2/> : ""}</div>
             </div>
-            <div className="main_page_container-3" style={style}>
+            <div className="main_page_container-3" style={style}></div>
+            <div className="main_page_container-4" style={style}>
+                <button className="change_user_button" onClick={handleCLick3}> Wybierz Użytownika</button>
             </div>
-            <div className="main_page_container-4" style={style}></div>
-
 
         </div>
     );
