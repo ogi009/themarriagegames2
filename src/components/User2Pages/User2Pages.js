@@ -24,9 +24,10 @@ const User2Pages = ({counter, setCounter}) => {
     window.localStorage.setItem(`dinner2`, JSON.stringify(dinnerCounter));
 
     const [getDate, setGetDate] = useState([]);
-    useEffect( ()=>{
-        setGetDate(JSON.parse(window.localStorage.getItem(`date2`)));
-
+    useEffect( () => {
+        if (window.localStorage.getItem(`date2`) !== null)  {
+            setGetDate(JSON.parse(window.localStorage.getItem(`date2`)));
+        }
     },[])
 
     const dogPercent = `${(dogCounter * 100 / (dogCounter + JSON.parse(window.localStorage.getItem('dog')))).toFixed(1)}`;

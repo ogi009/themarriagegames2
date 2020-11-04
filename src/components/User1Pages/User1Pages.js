@@ -29,7 +29,6 @@ const User1Pages = ({counter, setCounter}) => {
         if (window.localStorage.getItem(`date`) !== null)  {
             setGetDate(JSON.parse(window.localStorage.getItem(`date`)));
         }
-
     },[])
 
 
