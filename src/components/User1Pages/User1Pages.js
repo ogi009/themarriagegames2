@@ -3,7 +3,7 @@ import "./_user1Pages.scss";
 import Buttons from "../Buttons/Buttons";
 import MoviePage from "../MoviePage/MoviePage";
 import User1DetailsPage from "../User1DetailsPage/User1DetailsPage";
-import DateList from "../DateListUser1/DateList";
+import DateListUser1 from "../DateListUser1/DateListUser1";
 
 const User1Pages = ({counter, setCounter}) => {
 
@@ -176,7 +176,7 @@ const User1Pages = ({counter, setCounter}) => {
                 <MoviePage/>
             </div>
             <div style={{display: show4, margin: "1rem"}} className="date_container">
-                <DateList/>
+                <DateListUser1 setCounter={setCounter} counter={counter}/>
             </div>
         </div>
     );

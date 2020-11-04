@@ -23,12 +23,6 @@
   user-select: none;
 }
 
-.idea_list ul li:last-child {
-}
-
-.idea_list ul li:nth-child(odd) {
-}
-
 .idea_list ul li:hover {
   background: $orangeBGCardColor;
 }
@@ -51,7 +45,6 @@
   width: 0.5rem;
 }
 
-
 .idea_list .header {
   color: white;
   text-align: center;
@@ -68,9 +61,10 @@
 .idea_list input {
   border: none;
   width: 75%;
-  padding: 10px;
+  padding: 0.7rem;
   float: left;
-  font-size: 16px;
+  font-size: 1rem;
+  border-radius: 1rem;
 }
 .idea_list .btn-add {
   padding: 0.63rem;
@@ -78,15 +72,29 @@
   background: $orangeBGCardColor;
   font-family: $mainFont2;
   float: left;
+  color: white;
   text-align: center;
   font-size: 0.8rem;
   cursor: pointer;
   transition: 0.3s;
   border: 0;
+  border-radius: 1rem;
 }
-
+.btn-add2 {
+  padding: 0.63rem;
+  width: 25%;
+  background: $orangeBGCardColor;
+  color: black;
+  font-family: $mainFont2;
+  text-align: center;
+  font-size: 0.6rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 0;
+  border-radius: 1rem;
+}
 .idea_list .btn-add:hover {
-  background-color: #bbb;
+  background-color: $violetBgCardColor;
 }
 .idea_list::-webkit-scrollbar {
   background: none;

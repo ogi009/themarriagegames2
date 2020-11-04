@@ -1,0 +1,103 @@
+@import "src/styles/colors";
+@import "src/styles/fonts";
+
+.idea_list {
+  text-align: center;
+  overflow: auto;
+  max-height: 270px;
+}
+
+.idea_list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.idea_list ul li {
+  cursor: pointer;
+  position: relative;
+  font-size: 1rem;
+  transition: 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.idea_list ul li:hover {
+  background: $orangeBGCardColor;
+}
+
+.idea_list ul li.done {
+  color: white;
+  text-decoration: line-through;
+}
+
+.idea_list ul li.done::before {
+  content: "";
+  position: absolute;
+  border-color: $orangeBGCardColor;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 0;
+  right: 0;
+  transform: rotate(45deg);
+  height: 1rem;
+  width: 0.5rem;
+}
+
+.idea_list .header {
+  color: white;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.idea_list .header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.idea_list input {
+  border: none;
+  width: 75%;
+  padding: 0.7rem;
+  float: left;
+  font-size: 1rem;
+  border-radius: 1rem;
+}
+.idea_list .btn-add {
+  padding: 0.63rem;
+  width: 25%;
+  background: $orangeBGCardColor;
+  font-family: $mainFont2;
+  float: left;
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 0;
+  border-radius: 1rem;
+}
+.btn-add2 {
+  padding: 0.63rem;
+  width: 25%;
+  background: $orangeBGCardColor;
+  color: black;
+  font-family: $mainFont2;
+  text-align: center;
+  font-size: 0.6rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 0;
+  border-radius: 1rem;
+}
+.idea_list .btn-add:hover {
+  background-color: $violetBgCardColor;
+}
+.idea_list::-webkit-scrollbar {
+  background: none;
+  border-radius: 2rem;
+
+}

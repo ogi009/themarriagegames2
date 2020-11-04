@@ -3,6 +3,7 @@ import "./_user2Pages.scss";
 import Buttons from "../Buttons/Buttons";
 import MoviePage from "../MoviePage/MoviePage";
 import User2DetailsPage from "../User2DetailPage/User2DetailPage";
+import DateListUser2 from "../DateListUser2/DateListUser2";
 
 const User2Pages = ({counter, setCounter}) => {
 
@@ -172,7 +173,7 @@ const User2Pages = ({counter, setCounter}) => {
                 <MoviePage/>
             </div>
             <div style={{display: show4, margin: "1rem"}} className="idea_container">
-               <div>Kupsko</div>
+               <DateListUser2 counter={counter} setCounter={setCounter}/>
             </div>
         </div>
     );
