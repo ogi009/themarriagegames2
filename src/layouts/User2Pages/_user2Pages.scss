@@ -1,5 +1,6 @@
 @import "../../styles/colors";
 @import "../../styles/fonts";
+@import "src/styles/mixins";
 
 .add_container {
   flex-wrap: wrap;
@@ -47,8 +48,8 @@
 }
 .details_container::-webkit-scrollbar-thumb {
   background: white;
-  background-image: url("../../images/user2.jpg");
-  background-position: center;
+  background-image: url("../../images/user1.jpg");
+  background: none;
   background-size: cover;
   border-radius: 1rem;
 }
@@ -129,4 +130,12 @@
   color: white;
   overflow: auto;
   max-height: 350px;
+}
+@include mobile {
+  .details_container-list {
+    font-size: 1.5rem;
+    border: 0.1rem solid white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
 }

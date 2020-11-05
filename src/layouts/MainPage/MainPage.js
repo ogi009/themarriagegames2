@@ -36,7 +36,8 @@ const MainPage = () => {
             <div className="main_page_container-3" style={style}>
                 <button className="change_user_button" onClick={handleCLick3}> Wybierz Użytownika</button>
             </div>
-            <div className="main_page_container-4" style={style}></div>
+            <div className="main_page_container-4" style={style}>
+            </div>
 
         </div>
     );

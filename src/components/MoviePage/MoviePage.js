@@ -50,7 +50,7 @@ const MoviePage = () => {
                     textAlign: "center"
                 }}>{(statusMessage === "The resource you requested could not be found.") ? "Ups.. Losuj dalej" : movieData}</div>
             </div>
-            <div>{movieDescription}</div>
+            <div className="movie_descritpion">{movieDescription}</div>
             <div style={{
                 fontSize: "3rem",
                 color: "violet",
