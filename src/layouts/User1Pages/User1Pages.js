@@ -60,31 +60,31 @@ const User1Pages = ({counter, setCounter}) => {
         setDogCounter(dogCounter + 1);
         setCounter(counter + 1);
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Spacer z Pieskiem!"]);
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Spacer z Pieskiem!" ]));
     };
     const handleAddBinButton = () => {
         setCounter(counter + 1);
         setBinCounter(binCounter + 1);
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Wyrzuciłeś śmieci!"]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Wyrzuciłeś śmieci!"]);
 
     }
     const handleAddBroomButton = () => {
         setCounter(counter + 1);
         setBroomCounter(broomCounter + 1);
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zamiotłeś!"]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zamiotłeś!"]);
     }
     const handleAddSinkButton = () => {
         setCounter(counter + 1);
         setSinkCounter(sinkCounter + 1);
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zmyłeś naczynia!!"]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zmyłeś naczynia!!"]);
     }
     const handleAddDinnerButton = () => {
         setCounter(counter + 1);
         setDinnerCounter(dinnerCounter + 1);
-        window.localStorage.setItem(`date`, JSON.stringify([...getDate]));
+        window.localStorage.setItem(`date`, JSON.stringify([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zrobiłeś obiad!"]));
         setGetDate([...getDate, new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " : Zrobiłeś obiad!"]);
     }
 

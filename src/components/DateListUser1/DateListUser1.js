@@ -7,19 +7,21 @@ const DateListUser1 = ({counter, setCounter}) => {
 
 
     useEffect(() => {
+
         if (window.localStorage.getItem(`ideas`) !== null) {
             setDateArray(JSON.parse(window.localStorage.getItem(`ideas`)));
         }
-    }, [])
+    }, [date])
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setDateArray(prevDate => [...prevDate, {
-            id: prevDate.length + 1,
+        const newDate = {
+            id: dateArray.length + 1,
             name: date,
             done: false,
-        }]);
-        window.localStorage.setItem(`ideas`, JSON.stringify([...dateArray]));
+        }
+        setDateArray(prevDate => [...prevDate, newDate]);
+        window.localStorage.setItem(`ideas`, JSON.stringify([...dateArray,newDate ]));
         setDate("");
     }
     const handleClick = (taskID) => {

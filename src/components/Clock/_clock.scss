@@ -4,7 +4,9 @@
 .clock_container {
   width: 17rem;
   height: 17rem;
-  background-color: white;
+  background-image: url("../../images/clock.jpg");
+  background-size: cover;
+  background-color: rgb(166, 205, 236);
   border-radius: 50%;
   border: 1rem solid $clockColor;
   display: flex;

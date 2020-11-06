@@ -3,9 +3,13 @@ import './_clock.scss'
 
 
 const Clock = () => {
-    const [rotateSec, setRotateSec] = useState(240);
-    const [rotateMin, setRotateMin] = useState(45);
-    const [rotateHour, setRotateHour] = useState(89);
+    const hour = new Date().getHours();
+    const min = new Date().getMinutes();
+    const sec = new Date().getSeconds();
+    const [rotateSec, setRotateSec] = useState(360 /60 * sec  + 180);
+    const [rotateMin, setRotateMin] = useState(360 /60 * min  + 180);
+    const [rotateHour, setRotateHour] = useState(360  / 12 * hour +180);
+
 
     const styleSec = {
         height: "6rem",

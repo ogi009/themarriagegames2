@@ -31,6 +31,26 @@ const User2 = () => {
         }
     }
 
+    const userSpeciality = () => {
+        const dog = JSON.parse(window.localStorage.getItem('dog2'));
+        const bin = JSON.parse(window.localStorage.getItem('bin2'));
+        const broom = JSON.parse(window.localStorage.getItem('broom2'));
+        const sink = JSON.parse(window.localStorage.getItem('sink2'));
+        const dinner = JSON.parse(window.localStorage.getItem('dinner2'));
+
+        if (dog >= bin && dog >= broom && dog >= sink && dog >= dinner) {
+            return "piesio"
+        } else if ( bin >= dog && bin >= broom && bin >= sink && bin >= dinner) {
+            return "śmieci"
+        }  else if ( broom >= dog && broom >= bin && broom >= sink && broom >= dinner) {
+            return "miotła"
+        }  else if ( sink >= dog && sink >= broom && sink >= bin && sink >= dinner) {
+            return "zmywanie"
+        }  else if ( dinner >= dog && dinner >= broom && dinner >= sink && dinner >= bin) {
+            return "kucharz"
+        }
+    }
+
 
     if (show === false) {
         return (
@@ -39,7 +59,7 @@ const User2 = () => {
                 <div className="user2_info">
                     <h2 className="user2_title">Asia</h2>
                     <h3 className="user2_level">{userLevel()}</h3>
-                    <p className="user2_speciality"> Specjalność: “piesio”</p>
+                    <p className="user2_speciality"> Specjalność: "{userSpeciality()}"</p>
                     <h1 className="user2_points"> {JSON.parse(window.localStorage.getItem('points2'))} ptk.</h1>
                 </div>
             </div>
@@ -51,9 +71,9 @@ const User2 = () => {
                 <div className="user2_details">
                     <div className="user2_photo1-2"></div>
                     <div className="user2_info-2">
-                        <h2 className="user2_title-2">Kuba</h2>
+                        <h2 className="user2_title-2">Asia</h2>
                         <h3 className="user2_level-2">{userLevel()}</h3>
-                        <p className="user2_speciality-2"> Specjalność: “śmieci”</p>
+                        <p className="user2_speciality-2"> Specjalność: "{userSpeciality()}"</p>
                         <h1 className="user2_points-2">{JSON.parse(window.localStorage.getItem('points2'))} ptk</h1>
                     </div>
                 </div>

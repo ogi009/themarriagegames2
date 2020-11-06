@@ -31,6 +31,25 @@ const User1 = () => {
            return "MASTER"
        }
     }
+    const userSpeciality = () => {
+        const dog = JSON.parse(window.localStorage.getItem('dog'));
+        const bin = JSON.parse(window.localStorage.getItem('bin'));
+        const broom = JSON.parse(window.localStorage.getItem('broom'));
+        const sink = JSON.parse(window.localStorage.getItem('sink'));
+        const dinner = JSON.parse(window.localStorage.getItem('dinner'));
+
+        if (dog >= bin && dog >= broom && dog >= sink && dog >= dinner) {
+            return "piesio"
+        } else if ( bin >= dog && bin >= broom && bin >= sink && bin >= dinner) {
+            return "śmieci"
+        }  else if ( broom >= dog && broom >= bin && broom >= sink && broom >= dinner) {
+            return "miotła"
+        }  else if ( sink >= dog && sink >= broom && sink >= bin && sink >= dinner) {
+            return "zmywanie"
+        }  else if ( dinner >= dog && dinner >= broom && dinner >= sink && dinner >= bin) {
+            return "kucharz"
+        }
+    }
 
 
     if (show === false) {
@@ -40,7 +59,7 @@ const User1 = () => {
                 <div className="user1_info">
                     <h2 className="user1_title">Kuba</h2>
                     <h3 className="user1_level">{userLevel()}</h3>
-                    <p className="user1_speciality"> Specjalność: “śmieci”</p>
+                    <p className="user1_speciality"> Specjalność: “{userSpeciality()}”</p>
                     <h1 className="user1_points"> {JSON.parse(window.localStorage.getItem('points'))} ptk.</h1>
                 </div>
             </div>
@@ -53,7 +72,7 @@ const User1 = () => {
                     <div className="user_info-2">
                         <h2 className="user_title-2">Kuba</h2>
                         <h3 className="user_level-2">{userLevel()}</h3>
-                        <p className="user_speciality-2"> Specjalność: “śmieci”</p>
+                        <p className="user_speciality-2"> Specjalność: “{userSpeciality()}”</p>
                         <h1 className="user_points-2">{JSON.parse(window.localStorage.getItem('points'))} ptk</h1>
                     </div>
                 </div>

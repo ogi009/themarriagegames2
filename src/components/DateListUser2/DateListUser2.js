@@ -14,12 +14,13 @@ const DateListUser2 = ({counter, setCounter}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setDateArray(prevDate => [...prevDate, {
-            id: prevDate.length + 1,
+        const newDate = {
+            id: dateArray.length + 1,
             name: date,
             done: false,
-        }]);
-        window.localStorage.setItem(`ideas2`, JSON.stringify([...dateArray]));
+        }
+        setDateArray(prevDate => [...prevDate, newDate]);
+        window.localStorage.setItem(`ideas2`, JSON.stringify([...dateArray,newDate ]));
         setDate("");
     }
     const handleClick = (taskID) => {
