@@ -3,7 +3,9 @@ import './_homepage.scss';
 import Header from "../Header/Header";
 import MainPage from "../MainPage/MainPage";
 import Footer from "../Footer/Footer";
+import Navigation from "../../components/Navigation";
 
+import { withAuthorization } from '../../components/Session';
 
 
 const HomePage = () => {
@@ -38,6 +40,7 @@ const HomePage = () => {
     } else {
         return (
             <div className="main_container">
+                <Navigation/>
                 <Header/>
                 <MainPage/>
                 <Footer/>
@@ -46,4 +49,6 @@ const HomePage = () => {
     }
 };
 
-export default HomePage;
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(HomePage);
