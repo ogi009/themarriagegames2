@@ -1,9 +1,9 @@
-#The Marriage Games - My first React App
+# The Marriage Games - My first React App
 DEMO: https://themarriagegames.netlify.app/
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [In the future](#future)
+* [In the future](#in-the-future)
 * [Installing](#installing)
 
 ## General info
